@@ -1,0 +1,79 @@
+---
+import logo from '../public/logo.png'; // Ajusta la ruta según tu proyecto
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 max-w-8xl mx-auto">
+    {/* Columna izquierda */}
+    <div class="space-y-4">
+        <div class="border rounded-lg p-4 flex items-center justify-center min-h-[100px]">
+            <img src="/dialogo.png" alt="Logo" class="w-28 h-28" loading="lazy" />
+        </div>
+        <div class="border rounded-lg p-4 md:p-6">
+            <div class="flex flex-col">
+                <div class="flex justify-end mb-4"> {/* Contenedor para la imagen */}
+                    <img 
+                        src="/bulb.svg" 
+                        alt="" 
+                        class="w-12 md:w-16 h-12 md:h-16 "
+                        loading="lazy"
+                    />
+                </div>
+                <h2 class="text-lg md:text-xl font-bold mb-2">Evolución Constante</h2>
+                <p class="text-sm">
+                    Tecnoevolución SAS mejora continuamente DIÁLOGO SOFTWARE
+                    para adaptarse a las necesidades del mercado financiero
+                </p>
+            </div>
+        </div>
+    </div>
+
+    {/* Columna central */}
+    <div class="space-y-4">
+        <div class="bg-[#0B3142] text-white rounded-lg p-4">
+            <h1 class="text-xl md:text-2xl font-bold text-center">Dialogo Software</h1>
+        </div>
+        <div class="border rounded-lg p-4 md:p-6">
+            <ul class="space-y-4">
+                <li class="flex items-center gap-2 text-sm md:text-base">
+                    <img src='/icons/resourceIcon.svg' class="h-10 w-10 p-2"loading="lazy"/>
+                    <span>Gestión ágil de recursos financieros</span>
+                </li>
+                <li class="flex items-center gap-2 text-sm md:text-base">
+                    <span class="text-[#0B3142]">📊</span>
+                    <span>Información para toma de decisiones</span>
+                </li>
+                <li class="flex items-center gap-2 text-sm md:text-base">
+                    <span class="text-[#0B3142]">💱</span>
+                    <span>Adaptación al mercado financiero</span>
+                </li>
+                <li class="flex items-center gap-2 text-sm md:text-base">
+                    <span class="text-[#0B3142]">📈</span>
+                    <span>Automatización de Procesos Financieros</span>
+                </li>
+            </ul>
+        </div>
+        <div class="border rounded-lg p-4">
+            <h2 class="text-lg md:text-xl font-bold text-center">Soporte Técnico Especializado</h2>
+        </div>
+    </div>
+
+    {/* Columna derecha */}
+    <div class="space-y-4 md:col-span-2 lg:col-span-1">
+        <div class="border rounded-lg p-4">
+            <h2 class="text-lg md:text-xl text-center">Optimiza tus decisiones con seguridad</h2>
+        </div>
+        <div class="bg-[#0B3142] text-white rounded-lg p-4 relative overflow-hidden">
+            <h2 class="text-lg md:text-xl font-bold pt-8">
+                Potencia la eficiencia para aumentar las utilidades del negocio
+            </h2>
+            <div class="flex justify-end relative h-24"> 
+                <img 
+                    src="/bentoPr.svg" 
+                    alt="" 
+                    class="absolute bottom-[-34%] right-0 w-32 h-32"
+                    loading="lazy"
+                />
+            </div>
+        </div>
+    </div>
+</div>

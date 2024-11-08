@@ -1,0 +1,135 @@
+<!-- Componente Astro actualizado -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('modal');
+      const modalContent = document.getElementById('modalContent');
+      const modalImage = document.getElementById('modalImage');
+      const closeModalButton = document.getElementById('closeModalButton');
+  
+      // Función para abrir el modal
+      function openModal(image) {
+        const modalImg = modalImage as HTMLImageElement;
+        modalImg.src = image;
+         modal.classList.add('active');
+  
+        // Calcular el ancho de la barra de scroll
+        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+        document.body.style.paddingRight = `${scrollBarWidth}px`;
+  
+        document.body.classList.add('modal-open');
+      }
+  
+      // Función para cerrar el modal
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+        document.body.style.paddingRight = ''; // Restablecer el padding
+      }
+  
+      // Añadir evento a las tarjetas
+      document.querySelectorAll('.card').forEach((card) => {
+        card.addEventListener('click', () => {
+          const image = card.getAttribute('data-image');
+          openModal(image);
+        });
+      });
+  
+      // Cerrar modal al hacer clic en el fondo
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+  
+      // Cerrar modal al hacer clic en el botón
+      closeModalButton.addEventListener('click', closeModal);
+    });
+  </script>
+  
+  <style>
+    /* Estilos para el fondo (overlay) */
+    #modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 50;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    #modal.active {
+      display: flex;
+    }
+  
+    /* Estilos para el contenido del modal */
+    #modalContent {
+      background: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      max-width: 90%;
+      opacity: 0;
+      transform: scale(0.85);
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+  
+    #modal.active #modalContent {
+      opacity: 1;
+      transform: scale(1);
+    }
+  
+    /* Evitar scroll sin ocultar la barra de scroll */
+    body.modal-open {
+      overflow-y: hidden;
+    }
+  </style>
+  
+  <div class="flex space-x-4 mt-10">
+    <!-- Tarjeta 1 -->
+    <div
+      class="card relative w-24 h-24 bg-blue-100 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
+      data-image="/certificacion1.png"
+    >
+      <span class="absolute bottom-2 right-2 text-xs text-gray-500">⬆️</span>
+      <span class="absolute inset-x-0 bottom-2 text-center text-xs text-gray-600 opacity-0 hover:opacity-100 transition-opacity duration-200">
+        Ver certificado
+      </span>
+    </div>
+  
+    <!-- Tarjeta 2 -->
+    <div
+      class="card relative w-24 h-24 bg-green-100 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
+      data-image="/certificacion2.png"
+    >
+      <span class="absolute bottom-2 right-2 text-xs text-gray-500">⬆️</span>
+      <span class="absolute inset-x-0 bottom-2 text-center text-xs text-gray-600 opacity-0 hover:opacity-100 transition-opacity duration-200">
+        Ver certificado
+      </span>
+    </div>
+  
+    <!-- Tarjeta 3 -->
+    <div
+      class="card relative w-24 h-24 bg-red-100 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
+      data-image="/certificacion3.png"
+    >
+      <span class="absolute bottom-2 right-2 text-xs text-gray-500">⬆️</span>
+      <span class="absolute inset-x-0 bottom-2 text-center text-xs text-gray-600 opacity-0 hover:opacity-100 transition-opacity duration-200">
+        Ver certificado
+      </span>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div id="modal">
+    <!-- Contenido del modal con transición -->
+    <div id="modalContent" class="relative">
+      <img id="modalImage" src="" alt="Certificación" class="w-full h-auto" />
+      <button
+        id="closeModalButton"
+        class="mt-4 text-red-500 absolute top-2 right-2"
+      >
+        Cerrar ✖️
+      </button>
+    </div>
+  </div>
+  

@@ -1,0 +1,232 @@
+---
+import { Image } from 'astro:assets';
+import tecnoLogo from '../../public/tecno-logo.png';
+---
+
+<style>
+  /* Custom breakpoint for menu collapse based on available space */
+  @media (max-width: 1024px) {
+    /* Adjust this value to the point where the menu items no longer fit */
+    .desktop-menu {
+      display: none;
+    }
+    .mobile-menu-button {
+      display: block;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .desktop-menu {
+      display: flex;
+    }
+    .mobile-menu-button {
+      display: none;
+    }
+  }
+  
+  /* Fix for submenu hover issue */
+  .nav-item:hover .submenu,
+  .nav-item:focus-within .submenu {
+    display: block;
+  }
+  
+  .submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 50;
+  }
+  
+  /* Ensure the submenu doesn't disappear when moving the cursor */
+  .nav-item {
+    position: relative;
+  }
+  </style>
+
+  <header class="bg-white border-b border-gray-100 w-full px-2 py-4 ">
+    <div class="container mx-auto ">
+      <nav class="flex items-center justify-between h-20">
+
+        <a href="/" class="flex-shrink-0">
+          <Image
+            src={tecnoLogo}
+            alt="Logo Tecnoevolución"
+            class="h-12 w-auto object-contain"
+            loading="eager"
+          />
+        </a>
+
+        <div class="desktop-menu flex items-center space-x-6">
+          <a href="/" class=" hover:text-[#005D81] transition-colors whitespace-nowrap">Inicio</a>
+          <a href="/quienes-somos" class="hover:text-[#005D81] transition-colors whitespace-nowrap">¿Quiénes somos?</a>
+
+          <div class="nav-item">
+            <button class=" hover:text-[#005D81] transition-colors inline-flex items-center focus:outline-none whitespace-nowrap">
+              Nuestra Historia
+              <svg
+                class="w-4 h-4 ml-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <!-- Submenu -->
+            <div class="submenu bg-white rounded-md shadow-lg w-full">
+              <a href="/nuestra-historia/item-1" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#005D81]">
+                Inicios
+              </a>
+              <a href="/nuestra-historia/item-2" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#005D81]">
+                Expansión
+              </a>
+            </div>
+          </div>
+  
+          <a href="/productos-servicios" class=" hover:text-[#005D81] transition-colors whitespace-nowrap">
+            Productos y Servicios
+          </a>
+          <a href="/clientes" class=" hover:text-[#005D81] transition-colors whitespace-nowrap">Clientes</a>
+  
+          <!-- Desktop Contact Email -->
+          <a href="mailto:ventas@tecnoevolucion.com" class="text-[#005D81] hover:text-[#007BA8] transition-colors whitespace-nowrap">
+            ventas@tecnoevolucion.com
+          </a>
+        </div>
+  
+        <!-- Mobile Menu Button -->
+        <div class="mobile-menu-button">
+          <button
+            id="menu-button"
+            class="p-2 text-gray-600 hover:text-[#005D81] focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <!-- Hamburger icon -->
+            <svg
+              id="menu-icon-open"
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Mobile Sidebar Menu -->
+  <div
+    id="mobile-menu"
+    class="fixed inset-y-0 right-0 z-50 w-64 bg-white shadow-xl transform translate-x-full transition-transform duration-300"
+    aria-hidden="true"
+  >
+    <!-- Sidebar Content -->
+    <div class="relative h-full">
+      <button
+        id="close-button"
+        class="absolute top-4 left-4 text-gray-600 hover:text-[#005D81] focus:outline-none"
+        aria-label="Close menu"
+      >
+        <!-- Close icon -->
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="p-6 space-y-6">
+        <a href="/" class="block text-gray-600 hover:text-[#005D81]">Inicio</a>
+        <a href="/quienes-somos" class="block text-gray-600 hover:text-[#005D81]">¿Quiénes somos?</a>
+  
+        <!-- "Nuestra Historia" Collapsible Submenu -->
+        <div>
+          <button
+            id="submenu-button"
+            class="flex items-center w-full text-gray-600 hover:text-[#005D81] focus:outline-none"
+          >
+            Nuestra Historia
+            <svg
+              id="submenu-icon"
+              class="w-4 h-4 ml-auto transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <!-- Down arrow icon -->
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="submenu" class="mt-2 ml-4 space-y-2 hidden">
+            <a href="/nuestra-historia/item-1" class="block text-gray-600 hover:text-[#005D81]">
+              Inicios
+            </a>
+            <a href="/nuestra-historia/item-2" class="block text-gray-600 hover:text-[#005D81]">
+              Expansión
+            </a>
+          </div>
+        </div>
+  
+        <a href="/productos-servicios" class="block text-gray-600 hover:text-[#005D81]">
+          Productos y Servicios
+        </a>
+        <a href="/clientes" class="block text-gray-600 hover:text-[#005D81]">Clientes</a>
+        <!-- Contact Email Link -->
+        <a
+          href="mailto:ventas@tecnoevolucion.com"
+          class="block text-[#005D81] hover:text-[#007BA8] transition-colors"
+        >
+          ventas@tecnoevolucion.com
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Overlay -->
+  <div
+    id="overlay"
+    class="fixed inset-0 bg-black opacity-50 hidden"
+    aria-hidden="true"
+  ></div>
+  
+  <!-- JavaScript for Menu Toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuButton = document.getElementById('menu-button');
+      const closeButton = document.getElementById('close-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const overlay = document.getElementById('overlay');
+  
+      const openMenu = () => {
+        mobileMenu.classList.remove('translate-x-full');
+        overlay.classList.remove('hidden');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+      };
+  
+      const closeMenu = () => {
+        mobileMenu.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      };
+  
+      menuButton.addEventListener('click', openMenu);
+      closeButton.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+  
+      // Handle submenu toggle
+      const submenuButton = document.getElementById('submenu-button');
+      const submenu = document.getElementById('submenu');
+      const submenuIcon = document.getElementById('submenu-icon');
+  
+      submenuButton.addEventListener('click', function () {
+        submenu.classList.toggle('hidden');
+        submenuIcon.classList.toggle('rotate-180');
+      });
+    });
+  </script>
