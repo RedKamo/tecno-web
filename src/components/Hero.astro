@@ -3,19 +3,22 @@
 // Props si necesitas
 ---
 
-<section class="h-[600px] bg-gradient-to-r from-sky-800 to-sky-400 text-white rounded-lg mb-24 ">
-  <div class="h-full max-w-[1440px] mx-auto  ">
+<section class="relative h-[450px] md:h-[600px] lg:h-[700px]  bg-gradient-to-r from-sky-800 to-sky-400 text-white mb-24 rounded-tl-xl rounded-tr-xl rounded-bl-xl overflow-hidden">
+  <!-- Video Background -->
+  <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0 ">
+    <source src="/herobg.mp4" type="video/mp4" />
+  </video>
+
+  <div class="h-full max-w-[1440px] mx-auto relative z-10">
     <!-- Contenedor principal con flex y h-full -->
-    <div class="h-full flex flex-col text-pretty ">
+    <div class="h-full flex flex-col text-pretty">
       <!-- 90% superior del height -->
-      <div class="h-[90%] flex items-center  px-4 sm:px-6 lg:px-8 ">
-        <div class="w-full lg:w-[50%]">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            Impulsamos la tecnología
-            <br />
-            de tu negocio
+      <div class="h-[90%] flex items-center px-4 sm:px-6 lg:px-8">
+        <div class="w-full  lg:w-[78%]">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ">
+            Impulsamos la <span class="gradient-text">tecnología</span> de tu negocio
           </h1>
-          <p class="text-xl md:text-2xl mb-8">
+          <p class="w-full md:w-[70%] lg:w-[80%] text-xl md:text-2xl my-12">
             Más de 25 años ofreciendo tecnología y asesoría en sistemas
             de información para empresas como la tuya.
           </p>
@@ -25,11 +28,19 @@
         </div>
       </div>
 
-      <div class="h-[10%] flex items-center justify-center  md:justify-end">
-        <div class="bg-white rounded-t-lg md:rounded-tl-lg md:rounded-tr-none flex items-center justify-center p-2  w-3/4 sm:w-1/2 md:w-auto ">
-            <img src="/cmmi3marcapais.webp"  alt="Certificaciones"  class="w-full h-auto"  />
-          </div>
+      <div class="h-[10%] flex items-center justify-center md:justify-end">
+        <div class="bg-white rounded-t-lg md:rounded-tl-lg md:rounded-tr-none flex items-center justify-center p-2 w-3/4 sm:w-1/2 md:w-auto">
+          <img src="/cmmi3marcapais.webp" alt="Certificaciones" class="w-full h-auto" />
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .gradient-text {
+  background: linear-gradient(90deg, #067ebb, #00bae9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+</style>

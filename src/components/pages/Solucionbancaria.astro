@@ -1,0 +1,26 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ProductBanner from "@/components/ProductBanner.astro";
+
+const title = 'Solución bancaria';
+const icon = '/icons/logoBancaria.svg';
+---
+
+<Layout title="Solucion Bancaria" >
+  <ProductBanner title={title} icon={icon} />
+  <div class="container py-28 border-2 border-red-500">
+    <div class="flex flex-col items-start">
+        <div class="bg-sky-50 shadow rounded-lg mb-6">
+            <img
+                src={icon}
+                alt={title}
+                class="h-20 w-20 p-4 "
+            />
+        </div>
+          <h1 class="text-4xl font-bold mb-4">{title}</h1>
+          <p class="text-lg text-gray-700 text-center">
+          Página de {title}.
+          </p>
+      </div>
+    </div>
+</Layout>
