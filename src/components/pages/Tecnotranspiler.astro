@@ -1,7 +1,43 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import ProductBanner from "@/components/ProductBanner.astro";
+
+const title = 'Tecno';
+const icon = '/icons/logoTtranspiler.svg';
 ---
 
-<Layout title="Tecno transpiler" >
-<div><h1>PAGINA DE TECNO TRANSPILER</h1></div>
+<Layout title="TecnoTranspiler" >
+  <ProductBanner title={title} icon={icon} />
+  <div class=" max-w-6xl pt-10 mx-auto  text-base md:text-lg  leading-relaxed ">
+    <h1 class="text-4xl font-bold pb-6"> Innovación en Migración de Sistemas.</h1>
+    <p class="  mx-auto pb-10  text-base md:text-lg  leading-relaxed ">Herramienta que migra o transpila (traduce) el programa fuente del sistema origen habitualmente en arquitectura Cliente/Servidor a lenguajes de programación de última generación en el entorno web, posibilitando además el acceso a nuevas arquitecturas multicapas.
+    </p>
+		<h2 class="text-3xl font-semibold text-sky-700 mb-6">Contexto:</h2>
+
+		<p class="mb-4 leading-relaxed">
+			El continuo avance tecnológico, la necesidad de incorporar rápida y fácilmente nuevas funcionalidades a los aplicativos y mayores facilidades de uso de las soluciones en los usuarios conducen rápidamente a la
+			<a href="#" class="text-sky-500 hover:underline">obsolescencia de los sistemas</a> de información.
+		</p>
+
+		<p class="mb-4 leading-relaxed">
+			Para solucionar lo planteado anteriormente, las empresas tienen las siguientes alternativas:
+		</p>
+
+		<ol class="list-decimal list-inside space-y-2 pl-4">
+			<li>Cambiar sus soluciones e infraestructura tecnológica actual y adquirir nuevos aplicativos.</li>
+			<li>Migrar sus soluciones actuales a una nueva versión en nuevas herramientas y tecnologías.</li>
+		</ol>
+
+		<p class="mt-8 leading-relaxed mb-12">
+			Cuando se opta por la segunda alternativa se presenta muchas incertidumbres en este nuevo reto sobre el cual regularmente no se cuenta con la experiencia ni la metodología adecuada con la que se debe abordar para garantizar el éxito del proyecto.
+			Para afrontar este reto de manera eficiente, una de las mejores alternativas es el uso de una herramienta de migración (TRANSPILADOR) del actual sistema a la nueva arquitectura que permita automatizar gran parte del proceso de codificación/programación.
+		</p>
+			<h2 class="text-3xl font-semibold text-sky-700 mb-6">¿Qué hace Tecnotranspiler?</h2>
+			<p class="  mx-auto pb-12  text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">Automatiza el proceso de codificación de un lenguaje y tecnologías de programación a nuevas tecnologías basadas en definiciones de arquitecturas de servicios en la NUBE.</p>
+
+			<img src="/tdiagram.svg" alt="" class="w-full mx-auto">
+
+			<h2 class="text-3xl font-semibold text-sky-700 pt-10 mb-6">Una herramienta premiada</h2>
+			<p class="  mx-auto pb-12  text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">Como reconocimiento a sus aportes a la construcción, implementación y puesta en marcha de proyectos exitosos apoyados en nuestra herramienta TECNOTRANSPILER, hemos recibido tres importantes reconocimientos en la industria Latinoamericana:</p>
+		</div>
 </Layout>
