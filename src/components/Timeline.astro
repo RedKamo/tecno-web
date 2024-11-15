@@ -1,0 +1,121 @@
+---
+const timeline = [
+  {
+    year: 2011,
+    events: [
+      {
+        title: "Reconocimiento 1",
+        description: "Descripción del primer reconocimiento"
+      },
+      {
+        title: "Reconocimiento 2",
+        description: "Otro logro importante en 2011"
+      }
+    ]
+  },
+  {
+    year: 2013,
+    events: [
+      {
+        title: "Reconocimiento 3",
+        description: "Primer logro del 2013"
+      },
+      {
+        title: "Reconocimiento 4",
+        description: "Segundo reconocimiento importante"
+      },
+      {
+        title: "Reconocimiento 5",
+        description: "Tercer hito significativo del año"
+      }
+    ]
+  },
+  {
+    year: 2014,
+    events: [
+      {
+        title: "Reconocimiento 6",
+        description: "Logro principal del 2014"
+      }
+    ]
+  },
+  {
+    year: 2015,
+    events: [
+      {
+        title: "Reconocimiento 7",
+        description: "Primer reconocimiento del 2015"
+      },
+      {
+        title: "Reconocimiento 8",
+        description: "Último logro destacado del 2015"
+      }
+    ]
+  }
+];
+---
+
+<div class="relative max-w-7xl mx-auto px-4">
+  <div class="absolute left-[120px] lg:left-1/2 w-[2px] h-full bg-dots"></div>
+  
+  {timeline.map(({ year, events }) => (
+    <div class="relative pl-32 lg:pl-0 mb-12" data-year-section>
+      <div class="year-number absolute left-8 lg:left-[calc(50%-80px)] font-mono text-sm md:text-xl text-black">
+        {year}
+      </div>
+      <div class="events-container lg:w-[400px] lg:ml-[calc(50%+2rem)]">
+        {events.map(event => (
+          <div class="bg-[#0d1117] rounded-lg p-6 mb-4">
+            <h3 class="text-white text-lg">{event.title}</h3>
+            <p class="text-gray-400">{event.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .year-number {
+    position: absolute;
+    transition: transform 0.1s ease-out;
+    z-index: 10;
+  }
+  
+  .events-container {
+    padding-left: 1rem;
+  }
+
+  .bg-dots {
+    background-image: linear-gradient(to bottom, #333 50%, transparent 50%);
+    background-size: 2px 15px;
+    background-repeat: repeat-y;
+  }
+</style>
+
+<script>
+  const sections = document.querySelectorAll('[data-year-section]');
+  
+  const updatePosition = () => {
+    sections.forEach(section => {
+      const yearEl = section.querySelector('.year-number') as HTMLElement;
+      const container = section.querySelector('.events-container') as HTMLElement;
+      
+      if (!yearEl || !container) return;
+      
+      const sectionRect = section.getBoundingClientRect();
+      const containerHeight = container.offsetHeight;
+      
+      const startOffset = window.innerHeight * 0.5;
+      let progress = (startOffset - sectionRect.top) / containerHeight;
+      progress = Math.max(0, Math.min(1, progress));
+      
+      const maxTranslate = containerHeight - yearEl.offsetHeight;
+      yearEl.style.transform = `translateY(${progress * maxTranslate}px)`;
+    });
+  };
+
+  window.addEventListener('scroll', updatePosition, { passive: true });
+  window.addEventListener('resize', updatePosition, { passive: true });
+  updatePosition();
+</script>
