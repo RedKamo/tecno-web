@@ -1,0 +1,76 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  title?: string;
+  description?: string;
+  showProductsButton?: boolean;
+  isProductPage?: boolean;
+}
+
+const {
+  title = "¿Listo para transformar tu negocio?",
+  description = "Contáctanos hoy mismo para una consulta personalizada y descubre cómo podemos ayudarte",
+  showProductsButton = true,
+  isProductPage = false
+} = Astro.props;
+---
+
+<section class="py-16 md:py-24">
+  <div class="bg-[#012537] text-white py-16 md:py-24 rounded-2xl">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        {title}
+      </h2>
+      <p class="text-lg md:text-xl text-gray-300 mb-12 mx-auto">
+        {description}
+      </p>
+      
+      <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+        <a 
+          href="mailto:ventas@tecnoevolucion.com" 
+          class="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#012537] rounded-lg hover:bg-blue-50 transition-colors"
+        >
+          <Icon name="tabler:mail" class="w-5 h-5" />
+          Contáctanos
+        </a>
+
+        {showProductsButton && (
+          <a 
+            href={isProductPage ? "/#productos" : "#productos"}
+            class="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white rounded-lg hover:bg-white/10 transition-colors products-link"
+          >
+            <Icon name="tabler:apps" class="w-5 h-5" />
+            Ver otros productos
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const productLinks = document.querySelectorAll('.products-link');
+
+    productLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        // Solo prevenimos el default si estamos en la página principal
+        if (window.location.pathname === '/') {
+          e.preventDefault();
+          const productsSection = document.getElementById('productos');
+          if (productsSection) {
+            const headerHeight = document.querySelector('header')?.offsetHeight || 0;
+            const targetPosition = productsSection.offsetTop - headerHeight;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }
+        // En páginas de producto, dejamos que el enlace funcione normalmente
+      });
+    });
+  });
+</script>

@@ -1,78 +1,156 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const timeline = [
   {
-    year: 2011,
+    year: 1995,
     events: [
       {
-        title: "Reconocimiento 1",
-        description: "Descripción del primer reconocimiento"
+        title: "Nuestros inicios",
+        description:
+          "Nuestra historia comienza en 1995, el año en que creamos nuestro primer portafolio de Soluciones.",
+        icon: "tabler:flag",
       },
-      {
-        title: "Reconocimiento 2",
-        description: "Otro logro importante en 2011"
-      }
-    ]
+    ],
   },
   {
-    year: 2013,
+    year: 2004,
     events: [
       {
-        title: "Reconocimiento 3",
-        description: "Primer logro del 2013"
+        title: "Portal Financiero",
+        description:
+          "Aprobación y apoyo por parte de COLCIENCIAS del proyecto 'Portal Financiero'",
+        icon: "tabler:certificate",
+        image: "/ColCiencias_logo.webp",
+        imageAlt: "Logo Colciencias",
       },
-      {
-        title: "Reconocimiento 4",
-        description: "Segundo reconocimiento importante"
-      },
-      {
-        title: "Reconocimiento 5",
-        description: "Tercer hito significativo del año"
-      }
-    ]
+    ],
   },
   {
     year: 2014,
     events: [
       {
-        title: "Reconocimiento 6",
-        description: "Logro principal del 2014"
-      }
-    ]
+        title: "Valoración en calidad",
+        description:
+          "Valoración en calidad con la metodología CMMI (Capability Maturity Model Integration) Nivel 3 con el apoyo de Colciencias, Sena, Proexport y Mintic.",
+        icon: "tabler:award",
+        image: "/cmmi3.webp",
+        imageAlt: "Logo CMMI Nivel 3",
+      },
+    ],
   },
   {
     year: 2015,
     events: [
       {
-        title: "Reconocimiento 7",
-        description: "Primer reconocimiento del 2015"
+        title: "Tecnoevolución",
+        description:
+          "Tecnoevolución empieza hacer parte del selecto grupo de empresas pioneras que representan el sector financiero de Tecnologías de la información (TI) en Colombia, portando la marca Colombia TI.",
+        icon: "tabler:certificate",
+        image: "/itmarcaPais.webp",
+        imageAlt: "Logo IT Marca Pais",
+      },
+    ],
+  },
+  {
+    year: 2021,
+    events: [
+      {
+        title: "Premio Seguridad Digital",
+        description:
+          "PRIMER LUGAR SEGURIDAD DIGITAL - Mejor campaña en procesos de tratamiento de datos.",
+        awardIcon: "/premioIcon.webp",
+      },
+    ],
+  },
+  {
+    year: 2023,
+    events: [
+      {
+        title: "Liderazgo en Seguridad",
+        description:
+          "PRIMER LUGAR SEGURIDAD DIGITAL - Mejor implementación en DATA SECURITY.",
+        awardIcon: "/premioIcon.webp",
       },
       {
-        title: "Reconocimiento 8",
-        description: "Último logro destacado del 2015"
-      }
-    ]
-  }
+        title: "Estrategia Digital",
+        description:
+          "PRIMER LUGAR SEGURIDAD DIGITAL - Mejor Estrategia de Mitigación de Riesgos Digitales.",
+        awardIcon: "/premioIcon.webp",
+      },
+    ],
+  },
 ];
 ---
 
-<div class="relative max-w-7xl mx-auto px-4">
-  <div class="absolute left-[120px] lg:left-1/2 w-[2px] h-full bg-dots"></div>
-  
-  {timeline.map(({ year, events }) => (
-    <div class="relative pl-32 lg:pl-0 mb-12" data-year-section>
-      <div class="year-number absolute left-8 lg:left-[calc(50%-80px)] font-mono text-sm md:text-xl text-black">
-        {year}
-      </div>
-      <div class="events-container lg:w-[400px] lg:ml-[calc(50%+2rem)]">
-        {events.map(event => (
-          <div class="bg-[#0d1117] rounded-lg p-6 mb-4">
-            <h3 class="text-white text-lg">{event.title}</h3>
-            <p class="text-gray-400">{event.description}</p>
-          </div>
-        ))}
-      </div>
+<div class="max-w-6xl mx-auto px-0 sm:px-8">
+  <div class="py-16">
+    <div class="px-4 sm:px-0">
+      <h1 class="text-4xl font-bold mb-6 text-center">Nuestra Historia</h1>
+      <p
+        class="text-base md:text-lg text-gray-600 text-center mb-14 max-w-3xl mx-auto"
+      >
+        Más de 25 años de experiencia respaldando el crecimiento del sector
+        financiero en Colombia
+      </p>
     </div>
-  ))}
+
+    <div class="relative">
+      <div
+        class="absolute left-[60px] sm:left-[120px] lg:left-1/2 w-[2px] h-full bg-dots"
+      >
+      </div>
+
+      {
+        timeline.map(({ year, events }) => (
+          <div class="relative pl-16 sm:pl-32 lg:pl-0 mb-12" data-year-section>
+            <div class="year-number absolute left-2 sm:left-8 lg:left-[calc(50%-80px)] font-bold text-lg sm:text-2xl md:text-3xl text-sky-700">
+              {year}
+            </div>
+            <div class="events-container lg:w-[500px] lg:ml-[calc(50%+2rem)]">
+              {events.map((event) => (
+                <div class="bg-white/80 border border-sky-100 rounded-xl p-3 sm:p-6 mb-4 hover:shadow-sm transition-shadow">
+                  <div class="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-4">
+                    {event.awardIcon ? (
+                      <div class="bg-sky-50 p-2 sm:p-3 rounded-full">
+                        <img
+                          src={event.awardIcon}
+                          alt="Premio LD"
+                          class="w-4 h-4 sm:w-6 sm:h-6 object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <div class="bg-sky-50 p-2 sm:p-3 rounded-full">
+                        <Icon
+                          name={event.icon}
+                          class="w-4 h-4 sm:w-6 sm:h-6 text-sky-600"
+                        />
+                      </div>
+                    )}
+                    <h3 class="text-sm sm:text-lg font-semibold text-gray-900">
+                      {event.title}
+                    </h3>
+                  </div>
+                  <p class="text-xs sm:text-base text-gray-600 mb-4">
+                    {event.description}
+                  </p>
+                  {event.image && (
+                    <div class="flex justify-start mt-4">
+                      <img
+                        src={event.image}
+                        alt={event.imageAlt}
+                        class="h-10 object-contain"
+                      />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
 </div>
 
 <style>
@@ -81,41 +159,50 @@ const timeline = [
     transition: transform 0.1s ease-out;
     z-index: 10;
   }
-  
+
   .events-container {
-    padding-left: 1rem;
+    padding-left: 0.5rem;
   }
 
   .bg-dots {
-    background-image: linear-gradient(to bottom, #333 50%, transparent 50%);
+    background-image: linear-gradient(to bottom, #0284c7 50%, transparent 50%);
     background-size: 2px 15px;
     background-repeat: repeat-y;
+  }
+
+  .award-logo-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
   }
 </style>
 
 <script>
-  const sections = document.querySelectorAll('[data-year-section]');
-  
+  const sections = document.querySelectorAll("[data-year-section]");
+
   const updatePosition = () => {
-    sections.forEach(section => {
-      const yearEl = section.querySelector('.year-number') as HTMLElement;
-      const container = section.querySelector('.events-container') as HTMLElement;
-      
+    sections.forEach((section) => {
+      const yearEl = section.querySelector(".year-number") as HTMLElement;
+      const container = section.querySelector(
+        ".events-container"
+      ) as HTMLElement;
+
       if (!yearEl || !container) return;
-      
+
       const sectionRect = section.getBoundingClientRect();
       const containerHeight = container.offsetHeight;
-      
-      const startOffset = window.innerHeight * 0.5;
+
+      const startOffset = Math.max(window.innerHeight * 0.2, 100);
       let progress = (startOffset - sectionRect.top) / containerHeight;
       progress = Math.max(0, Math.min(1, progress));
-      
+
       const maxTranslate = containerHeight - yearEl.offsetHeight;
       yearEl.style.transform = `translateY(${progress * maxTranslate}px)`;
     });
   };
 
-  window.addEventListener('scroll', updatePosition, { passive: true });
-  window.addEventListener('resize', updatePosition, { passive: true });
+  window.addEventListener("scroll", updatePosition, { passive: true });
+  window.addEventListener("resize", updatePosition, { passive: true });
   updatePosition();
 </script>

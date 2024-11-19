@@ -1,6 +1,7 @@
 ---
-import { Image } from 'astro:assets';
-import tecnoLogo from '../../public/tecno-logo.png';
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import tecnoLogo from "../../public/tecno-logo.png";
 ---
 
 <style>
@@ -12,7 +13,7 @@ import tecnoLogo from '../../public/tecno-logo.png';
       display: block;
     }
   }
-  
+
   @media (min-width: 1025px) {
     .desktop-menu {
       display: flex;
@@ -26,7 +27,7 @@ import tecnoLogo from '../../public/tecno-logo.png';
   .nav-item:focus-within .submenu {
     display: block;
   }
-  
+
   .submenu {
     display: none;
     position: absolute;
@@ -34,192 +35,259 @@ import tecnoLogo from '../../public/tecno-logo.png';
     top: 100%;
     z-index: 50;
   }
-  
 
   .nav-item {
     position: relative;
   }
-  </style>
+  .header-transition {
+    transition: all 0.3s ease-in-out;
+  }
 
-  <header class=" max-w-[1440px] bg-white border-b border-gray-100 w-full px-8 py-4 ">
-    <div class=" mx-auto">
-      <nav class="flex items-center justify-between h-20">
+  .header-blur {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.9);
+  }
 
-        <a href="/" class="flex-shrink-0">
-          <Image
-            src={tecnoLogo}
-            alt="Logo Tecnoevolución"
-            class="h-12 w-auto object-contain"
-            loading="eager"
-          />
-        </a>
+  header {
+    z-index: 50;
+  }
 
-        <div class="desktop-menu flex items-center space-x-6">
-          <a href="/" class=" hover:text-[#005D81] transition-colors whitespace-nowrap">Inicio</a>
-          <a href="/sobre-nosotros" class="hover:text-[#005D81] transition-colors whitespace-nowrap">Sobre Nosotros</a>
+  body.overflow-hidden header {
+    z-index: 40;
+  }
+</style>
 
- <!--          <div class="nav-item">
-            <button class=" hover:text-[#005D81] transition-colors inline-flex items-center focus:outline-none whitespace-nowrap">
-              Nuestra Historia
-              <svg
-                class="w-4 h-4 ml-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-  
-            <div class="submenu bg-white rounded-md shadow-lg w-full">
-              <a href="/nuestra-historia/item-1" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#005D81]">
-                Inicios
-              </a>
-              <a href="/nuestra-historia/item-2" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#005D81]">
-                Expansión
-              </a>
-            </div>
-          </div> -->
-  
-          <a href="/productos-servicios" class=" hover:text-[#005D81] transition-colors whitespace-nowrap">
-            Productos y Servicios
-          </a>
-          <a href="/clientes" class=" hover:text-[#005D81] transition-colors whitespace-nowrap">Clientes</a>
-  
-          <a href="mailto:ventas@tecnoevolucion.com" class="flex items-center text-white bg-gradient-to-r from-sky-400 via-sky-600 to-sky-800 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-sky-400 dark:focus:ring-sky-800 shadow-lg shadow-sky-500/50 dark:shadow-lg dark:shadow-sky-800/40 font-medium rounded-lg text-sm px-4 py-2 text-center ">
-            <img src="/icons/mail-icon.svg" alt="Ícono de contacto" class="w-5 h-5 mr-2" />
-            Contacto
-        </a>
-        </div>
-  
-        <!-- Mobile Menu Button -->
-        <div class="mobile-menu-button">
-          <button
-            id="menu-button"
-            class="p-2 text-gray-600 hover:text-[#005D81] focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            <!-- Hamburger icon -->
-            <svg
-              id="menu-icon-open"
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </nav>
-    </div>
-  </header>
-  
-  <!-- Menu mobile  -->
-  <div
-    id="mobile-menu"
-    class="fixed inset-y-0 right-0 z-50 w-64 bg-[#035279]  shadow-xl transform translate-x-full transition-transform duration-300"
-    aria-hidden="true"
-  >
-    <div class="relative h-full">
-      <button
-        id="close-button"
-        class="absolute top-4 left-4 text-whit hover:text-[#005D81] focus:outline-none"
-        aria-label="Close menu"
-      >
+<header
+  class="sticky top-0 z-50 w-full header-transition header-blur border-b border-gray-100/50 shadow-sm"
+>
+  <div class="max-w-[1440px] mx-auto px-8 py-2">
+    <nav class="flex items-center justify-between h-16">
+      <a href="/" class="flex-shrink-0">
+        <Image
+          src={tecnoLogo}
+          alt="Logo Tecnoevolución"
+          class="h-10 w-auto object-contain"
+          loading="eager"
+        />
+      </a>
 
-        <svg
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+      <div class="desktop-menu flex items-center space-x-6">
+        <a
+          href="/"
+          class="hover:text-[#005D81] transition-colors whitespace-nowrap"
+          >Inicio</a
         >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-      <div class="p-6 pt-16 space-y-6">
-        <a href="/" class="block text-white hover:text-[#005D81]">Inicio</a>
-        <a href="/" class="block text-white hover:text-[#005D81]">Sobre nosotros</a>
-<!--         <div>
-          <button
-            id="submenu-button"
-            class="flex items-center w-full text-white hover:text-[#005D81] focus:outline-none"
-          >
-            Nuestra Historia
-            <svg
-              id="submenu-icon"
-              class="w-4 h-4 ml-auto transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+        <a
+          href="/sobre-nosotros"
+          class="hover:text-[#005D81] transition-colors whitespace-nowrap"
+          >Sobre Nosotros</a
+        >
 
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div id="submenu" class="mt-2 ml-4 space-y-2 hidden">
-            <a href="/nuestra-historia/item-1" class="block text-white hover:text-[#005D81]">
-              Inicios
-            </a>
-            <a href="/nuestra-historia/item-2" class="block text-white hover:text-[#005D81]">
-              Expansión
-            </a>
-          </div>
-        </div> -->
-
-        <a href="/productos-servicios" class="block text-white hover:text-[#005D81]">
+        <a
+          href="/#productos"
+          class="hover:text-[#005D81] transition-colors whitespace-nowrap"
+        >
           Productos y Servicios
         </a>
-        <a href="/clientes" class="block text-white hover:text-[#005D81]">Clientes</a>
+        <a
+          href="/clientes"
+          class="hover:text-[#005D81] transition-colors whitespace-nowrap"
+          >Clientes</a
+        >
 
-        <a href="mailto:ventas@tecnoevolucion.com" class="flex items-center text-white bg-gradient-to-r from-sky-400 via-sky-600 to-sky-800 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-sky-400 dark:focus:ring-sky-800 shadow-lg shadow-sky-500/50 dark:shadow-lg dark:shadow-sky-800/40 font-medium rounded-lg text-sm px-4 py-2 text-center ">
-          <img src="/icons/mail-icon.svg" alt="Ícono de contacto" class="w-5 h-5 mr-2" />
+        <a
+          href="mailto:ventas@tecnoevolucion.com"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-[#012537] text-white rounded-lg hover:bg-[#001824] transition-colors"
+        >
+          <img
+            src="/icons/mail-icon.svg"
+            alt="Ícono de contacto"
+            class="w-5 h-5"
+          />
           Contacto
-      </a>
+        </a>
       </div>
+
+      <div class="mobile-menu-button">
+        <button
+          id="menu-button"
+          class="p-2 text-gray-600 hover:text-[#005D81] focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <svg
+            id="menu-icon-open"
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div
+  id="mobile-menu"
+  class="fixed inset-y-0 right-0 z-[60] w-64 bg-white shadow-xl transform translate-x-full transition-transform duration-300"
+  aria-hidden="true"
+>
+  <div class="relative h-full">
+    <button
+      id="close-button"
+      class="absolute top-4 left-4 text-gray-600 hover:text-[#012537] focus:outline-none"
+      aria-label="Close menu"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <div class="p-6 pt-16 space-y-4">
+      <a href="/" class="block text-gray-800 hover:text-[#012537]">Inicio</a>
+      <a href="/sobre-nosotros" class="block text-gray-800 hover:text-[#012537]"
+        >Sobre nosotros</a
+      >
+      <a
+        href="/#productos"
+        class="block text-gray-800 hover:text-[#012537]"
+        >Productos y Servicios</a
+      >
+      <a href="/clientes" class="block text-gray-800 hover:text-[#012537]"
+        >Clientes</a
+      >
+
+      <a
+        href="mailto:ventas@tecnoevolucion.com"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-[#012537] text-white rounded-lg hover:bg-[#001824] transition-colors w-full justify-center mt-6"
+      >
+        <Icon name="tabler:mail" class="w-5 h-5" />
+        Contacto
+      </a>
     </div>
   </div>
+</div>
 
-  <div
-    id="overlay"
-    class="fixed inset-0 bg-black opacity-90 hidden"
-    aria-hidden="true"
-  ></div>
+<div
+  id="overlay"
+  class="fixed inset-0 bg-black/80 hidden z-[55]"
+  aria-hidden="true"
+>
+</div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const menuButton = document.getElementById('menu-button');
-      const closeButton = document.getElementById('close-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const overlay = document.getElementById('overlay');
-      const body= document.body
-  
-      const openMenu = () => {
-        mobileMenu.classList.remove('translate-x-full');
-        overlay.classList.remove('hidden');
-        mobileMenu.setAttribute('aria-hidden', 'false');
-        body.classList.add('overflow-hidden')
-      };
-  
-      const closeMenu = () => {
-        mobileMenu.classList.add('translate-x-full');
-        overlay.classList.add('hidden');
-        mobileMenu.setAttribute('aria-hidden', 'true');
-        body.classList.remove('overflow-hidden');
-      };
-  
-      menuButton.addEventListener('click', openMenu);
-      closeButton.addEventListener('click', closeMenu);
-      overlay.addEventListener('click', closeMenu);
-  
-      // Handle submenu toggle
-      const submenuButton = document.getElementById('submenu-button');
-      const submenu = document.getElementById('submenu');
-      const submenuIcon = document.getElementById('submenu-icon');
-  
-      submenuButton.addEventListener('click', function () {
-        submenu.classList.toggle('hidden');
-        submenuIcon.classList.toggle('rotate-180');
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.getElementById("menu-button");
+    const closeButton = document.getElementById("close-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const overlay = document.getElementById("overlay");
+    const body = document.body;
+
+    const openMenu = () => {
+      mobileMenu.classList.remove("translate-x-full");
+      overlay.classList.remove("hidden");
+      mobileMenu.setAttribute("aria-hidden", "false");
+      body.classList.add("overflow-hidden");
+      document.querySelector("header").style.zIndex = "40";
+    };
+
+    const closeMenu = () => {
+      mobileMenu.classList.add("translate-x-full");
+      overlay.classList.add("hidden");
+      mobileMenu.setAttribute("aria-hidden", "true");
+      body.classList.remove("overflow-hidden");
+      document.querySelector("header").style.zIndex = "50";
+    };
+
+    menuButton.addEventListener("click", openMenu);
+    closeButton.addEventListener("click", closeMenu);
+    overlay.addEventListener("click", closeMenu);
+
+    const submenuButton = document.getElementById("submenu-button");
+    const submenu = document.getElementById("submenu");
+    const submenuIcon = document.getElementById("submenu-icon");
+
+    submenuButton.addEventListener("click", function () {
+      submenu.classList.toggle("hidden");
+      submenuIcon.classList.toggle("rotate-180");
+    });
+  });
+</script>
+
+<script>
+  const header = document.querySelector("header");
+  let lastScroll = 0;
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > 0) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
+
+<style>
+  .scrolled {
+    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.95);
+    border-color: rgba(229, 231, 235, 0.8);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('overlay');
+    const menuLinks = document.querySelectorAll('a[href^="/#"]');
+
+    const closeMenu = () => {
+      mobileMenu.classList.add('translate-x-full');
+      overlay.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+      document.querySelector('header').style.zIndex = '50';
+    };
+
+    menuLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').split('#')[1];
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+          closeMenu();
+
+          setTimeout(() => {
+            // Scroll
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const targetPosition = targetSection.offsetTop - headerHeight;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }, 300);
+        }
       });
     });
-  </script>
+  });
+</script>

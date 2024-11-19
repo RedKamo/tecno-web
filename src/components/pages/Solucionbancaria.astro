@@ -1,26 +1,137 @@
 ---
+import { Icon } from "astro-icon/components";
 import Layout from "@/layouts/Layout.astro";
 import ProductBanner from "@/components/ProductBanner.astro";
+import ProductCTA from "../ProductCTA.astro";
 
 const title = 'Solución bancaria';
 const icon = '/icons/logoBancaria.svg';
 ---
 
-<Layout title="Solucion Bancaria" >
+<Layout title="Solución Bancaria">
   <ProductBanner title={title} icon={icon} />
-  <div class="container py-28 border-2 border-red-500">
-    <div class="flex flex-col items-start">
-        <div class="bg-sky-50 shadow rounded-lg mb-6">
-            <img
-                src={icon}
-                alt={title}
-                class="h-20 w-20 p-4 "
-            />
-        </div>
-          <h1 class="text-4xl font-bold mb-4">{title}</h1>
-          <p class="text-lg text-gray-700 text-center">
-          Página de {title}.
-          </p>
+  <div class="max-w-6xl mx-auto px-0 sm:px-8">
+    <div class="py-16">
+      <div class="px-4 sm:px-0">
+        <h1 class="text-4xl font-bold mb-6">
+          Gestión Integral para el Sector Financiero
+        </h1>
+        <p class="text-base md:text-lg leading-relaxed mb-14">
+          Esta solución informática está dirigida al sector financiero: Bancario, Micro finanzas, 
+          Compañías de financiamiento comercial, ONG financieras, Cooperativas financieras y 
+          fondos de pensiones. Orientada a la administración de captaciones, Colocaciones y Caja financiera.
+        </p>
       </div>
+
+      {/* Sección de Características Principales */}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-14">
+        <div class="space-y-6 px-4 sm:px-0">
+          <h2 class="text-3xl font-semibold text-sky-700 mb-6">Colocaciones</h2>
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-sky-100">
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>Scoring y Crédito</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>Garantías y Cartera</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>Libranzas y Cobranzas</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>Cobro jurídico</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-6 px-4 sm:px-0">
+          <h2 class="text-3xl font-semibold text-sky-700 mb-6">Captaciones</h2>
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-sky-100">
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>CDT's y Canje</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>Cuentas de ahorro y corriente</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>Cheques de gerencia</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>Cuentas AFC y Carteras colectivas</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Sección de Características Adicionales */}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-14">
+        <div class="space-y-6 px-4 sm:px-0">
+          <h2 class="text-3xl font-semibold text-sky-700 mb-6">Administración</h2>
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-sky-100">
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>Contabilidad y Conciliaciones bancarias</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>Cuentas por pagar y cobrar</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>Certificaciones y Reportes legales</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>Tesorería, Clientes y Seguridad</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-6 px-4 sm:px-0">
+          <h2 class="text-3xl font-semibold text-sky-700 mb-6">Transaccional</h2>
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-sky-100">
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>Caja financiera y Firmas digitales</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>Biometría y Servidor de transacciones</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>Asociación de tarjetas a cuentas bancarias</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-sky-600" />
+                <span>Crédito rotativo</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <ProductCTA
+        title="¿Necesitas más información sobre nuestra Solución Bancaria?"
+        description="Contáctanos para una demostración personalizada"
+        showProductsButton={true}
+        isProductPage={true}
+      />
     </div>
+  </div>
 </Layout>

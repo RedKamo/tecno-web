@@ -1,15 +1,20 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import Hero from '@/components/Hero.astro';
-import Products from '@/components/Products.astro';
-import Bent2 from '@/components/Bent2.astro';
-import Certificaciones from '@/components/Certificaciones.astro';
-import Slider from '../Slider.astro';
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import Products from "@/components/Products.astro";
+import Bent2 from "@/components/Bent2.astro";
+import Certificaciones from "@/components/Certificaciones.astro";
+import Slider from "../Slider.astro";
+import ProductCTA from "@/components/ProductCTA.astro";
 ---
 
-<Layout title=" Tecnoevolucion">
-    <Hero />
-    <Products />
-    <Bent2 />
-    <Slider />
+<Layout title="Tecnoevolucion">
+  <Hero />
+  <Products />
+  <Bent2 />
+  <Slider />
+  <ProductCTA
+    title="¿Listo para transformar tu negocio?"
+    description="Contáctanos hoy mismo para una consulta personalizada y descubre cómo podemos ayudarte"
+  />
 </Layout>

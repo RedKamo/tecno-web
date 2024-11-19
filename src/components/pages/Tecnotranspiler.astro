@@ -1,62 +1,259 @@
 ---
+import { Icon } from "astro-icon/components";
 import Layout from "@/layouts/Layout.astro";
 import ProductBanner from "@/components/ProductBanner.astro";
+import { Image } from "astro:assets";
+import ProductCTA from "../ProductCTA.astro";
 
-const title = 'Tecno';
-const icon = '/icons/logoTtranspiler.svg';
+const title = "Tecno";
+const icon = "/icons/logoTtranspiler.svg";
 ---
 
-<Layout title="TecnoTranspiler" >
+<Layout title="TecnoTranspiler">
   <ProductBanner title={title} icon={icon} />
-  <div class=" max-w-6xl pt-10 mx-auto  text-base md:text-lg  leading-relaxed ">
-    <h1 class="text-4xl font-bold pb-6"> Innovación en Migración de Sistemas.</h1>
-    <p class="  mx-auto pb-10  text-base md:text-lg  leading-relaxed ">Herramienta que migra o transpila (traduce) el programa fuente del sistema origen habitualmente en arquitectura Cliente/Servidor a lenguajes de programación de última generación en el entorno web, posibilitando además el acceso a nuevas arquitecturas multicapas.
-    </p>
-		<h2 class="text-3xl font-semibold text-sky-700 mb-6">Contexto:</h2>
+  <div class="max-w-6xl mx-auto px-0 sm:px-8">
+    <div class="py-16">
+      <div class="px-4 sm:px-0">
+        <h1 class="text-4xl font-bold mb-6">
+          Innovación en Migración de Sistemas
+        </h1>
+        <p class="text-base md:text-lg leading-relaxed mb-14">
+          Herramienta que migra o transpila (traduce) el programa fuente del
+          sistema origen habitualmente en arquitectura Cliente/Servidor a
+          lenguajes de programación de última generación en el entorno web,
+          posibilitando además el acceso a nuevas arquitecturas multicapas.
+        </p>
 
-		<p class="mb-4 leading-relaxed">
-			El continuo avance tecnológico, la necesidad de incorporar rápida y fácilmente nuevas funcionalidades a los aplicativos y mayores facilidades de uso de las soluciones en los usuarios conducen rápidamente a la
-			<a href="#" class="text-sky-500 hover:underline">obsolescencia de los sistemas</a> de información.
-		</p>
+        <h2 class="text-3xl font-semibold text-sky-700 mb-6">Contexto:</h2>
+        <p class="text-base md:text-lg leading-relaxed mb-4">
+          El continuo avance tecnológico, la necesidad de incorporar rápida y
+          fácilmente nuevas funcionalidades a los aplicativos y mayores
+          facilidades de uso de las soluciones en los usuarios conducen
+          rápidamente a la
+          <strong class="font-semibold text-sky-800"
+            >obsolescencia de los sistemas</strong
+          >.
+        </p>
 
-		<p class="mb-4 leading-relaxed">
-			Para solucionar lo planteado anteriormente, las empresas tienen las siguientes alternativas:
-		</p>
+        <p class="text-base md:text-lg leading-relaxed mb-4">
+          Para solucionar lo planteado anteriormente, las empresas tienen las
+          siguientes alternativas:
+        </p>
 
-		<ol class="list-decimal list-inside space-y-2 pl-4">
-			<li>Cambiar sus soluciones e infraestructura tecnológica actual y adquirir nuevos aplicativos.</li>
-			<li>Migrar sus soluciones actuales a una nueva versión en nuevas herramientas y tecnologías.</li>
-		</ol>
+        <ol
+          class="list-decimal list-inside space-y-2 pl-4 mb-8 text-base md:text-lg"
+        >
+          <li>
+            Cambiar sus soluciones e infraestructura tecnológica actual y
+            adquirir nuevos aplicativos.
+          </li>
+          <li>
+            Migrar sus soluciones actuales a una nueva versión en nuevas
+            herramientas y tecnologías.
+          </li>
+        </ol>
 
-		<p class="mt-8 leading-relaxed mb-12">
-			Cuando se opta por la segunda alternativa se presenta muchas incertidumbres en este nuevo reto sobre el cual regularmente no se cuenta con la experiencia ni la metodología adecuada con la que se debe abordar para garantizar el éxito del proyecto.
-			Para afrontar este reto de manera eficiente, una de las mejores alternativas es el uso de una herramienta de migración (TRANSPILADOR) del actual sistema a la nueva arquitectura que permita automatizar gran parte del proceso de codificación/programación.
-		</p>
-			<h2 class="text-3xl font-semibold text-sky-700 mb-6">¿Qué hace Tecnotranspiler?</h2>
-			<p class="  mx-auto pb-12  text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">Automatiza el proceso de codificación de un lenguaje y tecnologías de programación a nuevas tecnologías basadas en definiciones de arquitecturas de servicios en la NUBE.</p>
+        <p class="text-base md:text-lg leading-relaxed mb-14">
+          Cuando se opta por la segunda alternativa se presenta muchas
+          incertidumbres en este nuevo reto sobre el cual regularmente no se
+          cuenta con la experiencia ni la metodología adecuada con la que se
+          debe abordar para garantizar el éxito del proyecto. Para afrontar este
+          reto de manera eficiente, una de las mejores alternativas es el uso de
+          una herramienta de migración (TRANSPILADOR) del actual sistema a la
+          nueva arquitectura que permita automatizar gran parte del proceso de
+          codificación/programación.
+        </p>
+        <h2 class="text-3xl font-semibold text-sky-700 mb-6">
+          ¿Qué hace TecnoTranspiler?
+        </h2>
+        <p class="text-base md:text-lg leading-relaxed mb-12 text-gray-700">
+          Automatiza el proceso de codificación de un lenguaje y tecnologías de
+          programación a nuevas tecnologías basadas en definiciones de
+          arquitecturas de servicios en la NUBE.
+        </p>
 
-			<img src="/tdiagram.svg" alt="" class="w-full mx-auto">
+        <Image
+          src="/tdiagram.svg"
+          alt="Diagrama de transformación de lenguajes"
+          width={800}
+          height={400}
+          class="w-full mx-auto mb-14"
+        />
 
-			<h2 class="text-3xl font-semibold text-sky-700 pt-10 mb-6">Una herramienta premiada</h2>
-			<p class="  mx-auto pb-12  text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">Como reconocimiento a sus aportes a la construcción, implementación y puesta en marcha de proyectos exitosos apoyados en nuestra herramienta TECNOTRANSPILER, hemos recibido tres importantes reconocimientos en la industria Latinoamericana:</p>
-		
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-				<div class="p-6 bg-blue-100 rounded-lg flex flex-col items-start">
-				  <img src="/path/to/icon1.svg" alt="Icono" class="w-10 h-10 mb-2">
-				  <h3 class="text-lg font-semibold">Mitigación del riesgo</h3>
-				  <p class="text-gray-700 mt-2">
-					Garantía de éxito por la mitigación del riesgo de migración y control del proyecto.
-				  </p>
-				</div>
-				<div class="p-6 bg-blue-200 rounded-lg flex flex-col items-start">
-				  <img src="/path/to/icon2.svg" alt="Icono" class="w-10 h-10 mb-2">
-				  <h3 class="text-lg font-semibold">Conservación de madurez</h3>
-				  <p class="text-gray-700 mt-2">
-					Conservación de la madurez y del alcance funcional de los aplicativos migrados.
-				  </p>
-				</div>
-				<!-- Repite para cada ventaja -->
-			  </div>
-		
-		</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
+          <div class="p-2 rounded-lg flex items-start border border-gray-100">
+            <Icon
+              name="tabler:circle-check"
+              class="w-8 h-8 mt-1 flex-shrink-0 text-sky-700"
+            />
+            <div class="ml-3">
+              <h3 class="text-lg font-semibold">Garantía de éxito</h3>
+              <p class="text-gray-700">
+                Garantía de éxito por la mitigación del riesgo de migración y
+                control del proyecto.
+              </p>
+            </div>
+          </div>
+          <div class="p-2 rounded-lg flex items-start border border-gray-100">
+            <Icon
+              name="tabler:refresh"
+              class="w-8 h-8 mt-1 flex-shrink-0 text-sky-700"
+            />
+            <div class="ml-3">
+              <h3 class="text-lg font-semibold">Conservación de madurez</h3>
+              <p class="text-gray-700">
+                Conservación de la madurez y del alcance funcional de los
+                aplicativos migrados.
+              </p>
+            </div>
+          </div>
+          <div class="p-2 rounded-lg flex items-start border border-gray-100">
+            <Icon
+              name="tabler:coin"
+              class="w-8 h-8 mt-1 flex-shrink-0 text-sky-700"
+            />
+            <div class="ml-3">
+              <h3 class="text-lg font-semibold">Disminución de costos</h3>
+              <p class="text-gray-700">
+                Disminución del tiempo y costos de los procesos de migración a
+                tecnologías recientes en un altísimo porcentaje (superior al
+                75%).
+              </p>
+            </div>
+          </div>
+          <div class="p-2 rounded-lg flex items-start border border-gray-100">
+            <Icon
+              name="tabler:refresh-dot"
+              class="w-8 h-8 mt-1 flex-shrink-0 text-sky-700"
+            />
+            <div class="ml-3">
+              <h3 class="text-lg font-semibold">Actualización tecnológica</h3>
+              <p class="text-gray-700">
+                Ágil actualización tecnológica de los colaboradores, que
+                contribuye a la conservación de los mismos y alta productividad.
+              </p>
+            </div>
+          </div>
+          <div class="p-2 rounded-lg flex items-start border border-gray-100">
+            <Icon
+              name="tabler:certificate"
+              class="w-8 h-8 mt-1 flex-shrink-0 text-sky-700"
+            />
+            <div class="ml-3">
+              <h3 class="text-lg font-semibold">
+                Incorporación de buenas prácticas
+              </h3>
+              <p class="text-gray-700">
+                Incorporación de buenas prácticas en el desarrollo de software.
+              </p>
+            </div>
+          </div>
+          <div class="p-2 rounded-lg flex items-start border border-gray-100">
+            <Icon
+              name="tabler:arrows-exchange"
+              class="w-8 h-8 mt-1 flex-shrink-0 text-sky-700"
+            />
+            <div class="ml-3">
+              <h3 class="text-lg font-semibold">Facilitación del cambio</h3>
+              <p class="text-gray-700">
+                Facilita la administración del cambio y disminuye el traumatismo
+                que ocasiona la implantación de nuevas tecnologías.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section
+        class="px-4 sm:px-0 py-16 bg-gradient-to-br from-sky-50/50 to-white rounded-2xl"
+      >
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 class="text-3xl font-semibold text-sky-700 mb-6">
+                Una herramienta premiada
+              </h2>
+              <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                Como reconocimiento a sus aportes a la construcción,
+                implementación y puesta en marcha de proyectos exitosos apoyados
+                en nuestra herramienta
+                <span class="font-semibold">TECNOTRANSPILER</span>, hemos
+                recibido tres importantes reconocimientos en la industria
+                Latinoamericana:
+              </p>
+
+              <div
+                class="inline-flex items-center gap-2 bg-sky-100 text-sky-700 px-4 py-2 rounded-full"
+              >
+                <Icon name="tabler:award" class="w-5 h-5" />
+                <span class="font-medium">Premiados 3 años consecutivos</span>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <div
+                class="bg-white border border-sky-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div class="flex items-center gap-4 mb-3">
+                  <div class="bg-sky-50 p-3 rounded-full">
+                    <Icon name="tabler:trophy" class="w-8 h-8 text-sky-600" />
+                  </div>
+                  <div>
+                    <span class="text-2xl font-bold text-sky-700">2023</span>
+                    <p class="text-sm text-sky-600">
+                      Reconocimiento más reciente
+                    </p>
+                  </div>
+                </div>
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Mejor implementación de Data Security
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  Destacados por nuestro compromiso con la seguridad de datos en
+                  procesos de migración.
+                </p>
+              </div>
+
+              <div
+                class="bg-white/80 border border-sky-100 rounded-xl p-6 hover:shadow-sm transition-shadow"
+              >
+                <div class="flex items-center gap-4 mb-2">
+                  <div class="bg-sky-50 p-3 rounded-full">
+                    <Icon name="tabler:trophy" class="w-6 h-6 text-sky-600" />
+                  </div>
+                  <span class="text-xl font-bold text-sky-700">2022</span>
+                </div>
+                <p class="text-gray-700">
+                  Mejor estrategia de mitigación de riesgos digitales
+                </p>
+              </div>
+
+              <div
+                class="bg-white/80 border border-sky-100 rounded-xl p-6 hover:shadow-sm transition-shadow"
+              >
+                <div class="flex items-center gap-4 mb-2">
+                  <div class="bg-sky-50 p-3 rounded-full">
+                    <Icon name="tabler:trophy" class="w-6 h-6 text-sky-600" />
+                  </div>
+                  <span class="text-xl font-bold text-sky-700">2021</span>
+                </div>
+                <p class="text-gray-700">
+                  Mejor campaña en procesos de tratamiento de datos
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="py-16">
+        <ProductCTA
+          title="¿Necesitas más información sobre TecnoTranspiler?"
+          description="Permítanos ayudarle a resolver todas sus dudas de forma personalizada."
+          showProductsButton={true}
+          isProductPage={true}
+        />
+      </div>
+    </div>
+  </div>
 </Layout>

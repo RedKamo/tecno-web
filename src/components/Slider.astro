@@ -1,40 +1,61 @@
 ---
-const clientlogos = [
-{ logo: '/clientLogos/BBVA_2019.svg', alt: 'Logo BBVA' },
-    { logo: '/clientLogos/banco_bogota.svg', alt: 'Logo Banco Bogotá' },
-    { logo: '/clientLogos/banco_colpatria.svg', alt: 'Logo Banco Colpatria' },
-    { logo: '/clientLogos/banco_coop.svg', alt: 'Logo Banco Coop' },
-    { logo: '/clientLogos/banco_mujer.svg', alt: 'Logo Banco Mujer' },
-    { logo: '/clientLogos/banco_procredit.svg', alt: 'Logo Banco Procredit' },
-    { logo: '/clientLogos/banco_santander.svg', alt: 'Logo Banco Santander' },
-    { logo: '/clientLogos/mibancompartir.png', alt: 'Logo Bancompartir' },
-    { logo: '/clientLogos/bayport_logo.png', alt: 'Logo Bayport' },
-    { logo: '/clientLogos/comultrasan.svg', alt: 'Logo Comultrasan' },
-    { logo: '/clientLogos/corpbanc.svg', alt: 'Logo Corpbanc' },
-    { logo: '/clientLogos/cvu_logo.png', alt: 'Logo CVU' },
-    { logo: '/clientLogos/fng-png.png', alt: 'Logo FNG' },
-    { logo: '/clientLogos/logo-base-bot-sw.png', alt: 'Logo Base Bot' },
-    { logo: '/clientLogos/logo-Colfondos-Habitat.png', alt: 'Logo Colfondos Habitat' },
-    { logo: '/clientLogos/logoCH.png', alt: 'Logo CH' }
-];
-
-
+import { getAllClients } from "@/data/clients";
+const clientLogos = getAllClients();
 ---
 
+<section class="py-16 md:py-24">
+  <div class="max-w-[1440px] mx-auto px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+        Empresas que confían en nosotros
+      </h2>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        Más de 15 instituciones financieras líderes en Latinoamérica han elegido
+        nuestras soluciones
+      </p>
+    </div>
 
-<div class="overflow-hidden mt-16 mb-12  lg:mt-32">
-  <ul class="flex animate-infinite-slider min-w-max">
-    {clientlogos.concat(clientlogos).map((clientLogo) => (
-      <li class="flex-shrink-0 p-4 flex items-center justify-center ">
-        <!-- Add 'group' class to enable group-hover -->
-        <div class="group w-20 h-20 md:w-36 px-2 flex items-center justify-center rounded-md overflow-hidden bg-slate-50 border-2 border-slate-100">
-          <img
-            src={clientLogo.logo}
-            alt={clientLogo.alt}
-            class="max-w-full max-h-full object-contain filter grayscale transition duration-300 group-hover:filter-none"
-          />
-        </div>
-      </li>
-    ))}
-  </ul>
-</div>
+    <div class="relative">
+      <div
+        class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"
+      >
+      </div>
+      <div
+        class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"
+      >
+      </div>
+      <div class="overflow-hidden">
+        <ul class="flex animate-infinite-slider min-w-max">
+          {
+            clientLogos.concat(clientLogos).map((client) => (
+              <li class="flex-shrink-0 p-4 flex items-center justify-center">
+                <div class="group w-20 h-20 md:w-36 px-2 flex items-center justify-center rounded-lg overflow-hidden bg-white shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+                  <img
+                    src={client.logo}
+                    alt={client.alt}
+                    class="max-w-full max-h-full object-contain filter grayscale transition duration-300 group-hover:filter-none"
+                  />
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-infinite-slider {
+    animation: slide 40s linear infinite;
+  }
+</style>

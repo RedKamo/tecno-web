@@ -1,9 +1,136 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Timeline from "@/components/Timeline.astro";
-
+import ProductCTA from "@/components/ProductCTA.astro";
+import { Icon } from "astro-icon/components";
 ---
 
-<Layout title="Nuestra Historia">
-	<Timeline />
+<Layout title="Sobre Nosotros">
+  <section class="relative bg-gradient-to-b from-sky-50 to-white pt-16 pb-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">¿Quiénes somos?</h1>
+        <p class="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
+          Somos una empresa de servicios tecnológicos con más de 25 años de
+          experiencia proporcionando un amplio portafolio de soluciones software
+          para el sector financiero, apoyando y asesorando a los clientes en la
+          implementación y montaje de nuestros productos, los cuales se adaptan
+          especialmente a sus exigentes necesidades en un sector tan dinámico
+          como el financiero.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-sky-100">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="bg-sky-50 p-3 rounded-full">
+              <Icon name="tabler:target" class="w-6 h-6 text-sky-600" />
+            </div>
+            <h2 class="text-2xl font-bold">Misión</h2>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            Proporcionar soluciones tecnológicas bancarias y financieras de alto
+            nivel, que se caractericen por ser abiertas, portables y escalables,
+            buscando beneficiar a clientes nacionales e internacionales.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-sky-100">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="bg-sky-50 p-3 rounded-full">
+              <Icon name="tabler:eye" class="w-6 h-6 text-sky-600" />
+            </div>
+            <h2 class="text-2xl font-bold">Visión</h2>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            Posicionar nuestras soluciones tecnológicas bancarias y financieras
+            en el mercado latinoamericano y ser reconocidos por nuestra
+            contribución al incremento de la competitividad de nuestros
+            clientes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="h-16 bg-gradient-to-b from-white to-gray-50"></div>
+
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div
+          class="relative p-6 rounded-xl border border-dashed border-sky-200 overflow-hidden"
+        >
+          <div
+            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-400 to-sky-500"
+          >
+          </div>
+
+          <div class="flex items-center gap-4 mb-4">
+            <div class="bg-sky-50 p-3 rounded-full">
+              <Icon name="tabler:briefcase" class="w-6 h-6 text-sky-600" />
+            </div>
+            <h3 class="font-semibold">Experiencia Sectorial</h3>
+          </div>
+          <p class="text-gray-600">
+            Los socios y mayoría de ex-empleados son ex-banqueros y del sector
+            solidario, contando con un historial reconocido en el sector
+            bancario.
+          </p>
+        </div>
+
+        <div
+          class="relative p-6 rounded-xl border border-dashed border-blue-200 overflow-hidden"
+        >
+          <div
+            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-blue-500"
+          >
+          </div>
+
+          <div class="flex items-center gap-4 mb-4">
+            <div class="bg-blue-50 p-3 rounded-full">
+              <Icon name="tabler:users-group" class="w-6 h-6 text-blue-600" />
+            </div>
+            <h3 class="font-semibold">Equipo Especializado</h3>
+          </div>
+          <p class="text-gray-600">
+            Nuestras soluciones han sido creadas con la participación de un
+            equipo interdisciplinario del sector financiero.
+          </p>
+        </div>
+
+        <div
+          class="relative p-6 rounded-xl border border-dashed border-yellow-400/70 overflow-hidden"
+        >
+          <div class="absolute top-0 left-0 right-0 flex">
+            <div class="h-1 w-1/2 bg-yellow-400"></div>
+            <div class="h-1 w-1/4 bg-blue-600"></div>
+            <div class="h-1 w-1/4 bg-red-600"></div>
+          </div>
+
+          <div class="flex items-center gap-4 mb-4">
+            <div class="bg-yellow-50 p-3 rounded-full">
+              <Icon name="tabler:award" class="w-6 h-6 text-yellow-600" />
+            </div>
+            <h3 class="font-semibold">100% Colombiana</h3>
+          </div>
+          <p class="text-gray-600">
+            Empresa 100% Colombiana con más de 25 años de experiencia en el
+            sector financiero.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <Timeline />
+  </section>
+
+  <ProductCTA
+    title="Descubre cómo podemos impulsar tu negocio"
+    description="Explora nuestras soluciones tecnológicas diseñadas específicamente para el sector financiero"
+    showProductsButton={true}
+    isProductPage={false}
+  />
 </Layout>
