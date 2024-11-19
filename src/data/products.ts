@@ -34,7 +34,7 @@ export const products: Product[] = [
     icon: '/icons/logoBolsa.svg',
     title: 'Comisionistas de Bolsa',
     description: 'Solución especializada para comisionistas de bolsa, diseñada para gestionar eficientemente las inversiones de terceros y optimizar la administración de portafolios.',
-    link: '/comisionistas-bolsa'
+    link: '/comisionistas-de-bolsa'
   },
   {
     icon: '/icons/logoFabrica.svg',

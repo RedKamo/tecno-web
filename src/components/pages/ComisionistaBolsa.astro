@@ -1,0 +1,203 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "@/layouts/Layout.astro";
+import ProductBanner from "@/components/ProductBanner.astro";
+import ProductCTA from "../ProductCTA.astro";
+---
+
+<Layout title="Comisionistas de Bolsa">
+  <ProductBanner
+    title="Comisionistas de Bolsa"
+    icon="/icons/logoBolsa.svg"
+    bgImage="/images/products/comisionista-bg.webp"
+    category="Solución Financiera"
+    features={["Trading Avanzado", "Gestión de Inversiones", "Integración BVC"]}
+  />
+
+  <div class="max-w-6xl mx-auto px-0 sm:px-8">
+    <div class="py-16">
+      <div class="px-4 sm:px-0">
+        <h1 class="text-4xl font-bold mb-6">
+          Plataforma Integral para Comisionistas de Bolsa
+        </h1>
+        <p class="text-base md:text-lg leading-relaxed mb-14">
+          Esta solución está orientada a la administración de inversiones de
+          terceros, proporcionando herramientas avanzadas para la gestión
+          eficiente del mercado de valores.
+        </p>
+
+        <div
+          class="relative bg-gradient-to-br from-sky-900 to-sky-800 rounded-3xl overflow-hidden mb-16"
+        >
+          <div class="absolute inset-0 opacity-15">
+            <svg
+              class="w-full h-full"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0,50 L20,45 L40,60 L60,35 L80,55 L100,25"
+                stroke="currentColor"
+                stroke-width="1"
+                fill="none"
+                class="text-sky-200/40">
+                <animate
+                  attributeName="d"
+                  dur="4s"
+                  repeatCount="indefinite"
+                  values="
+                    M0,50 L20,45 L40,60 L60,35 L80,55 L100,25;
+                    M0,45 L20,55 L40,40 L60,45 L80,35 L100,45;
+                    M0,50 L20,45 L40,60 L60,35 L80,55 L100,25"
+                />
+              </path>
+              
+              <path
+                d="M0,60 L20,55 L40,70 L60,45 L80,65 L100,35"
+                stroke="currentColor"
+                stroke-width="1"
+                fill="none"
+                class="text-sky-100/30">
+                <animate
+                  attributeName="d"
+                  dur="5s"
+                  repeatCount="indefinite"
+                  values="
+                    M0,60 L20,55 L40,70 L60,45 L80,65 L100,35;
+                    M0,55 L20,65 L40,50 L60,55 L80,45 L100,55;
+                    M0,60 L20,55 L40,70 L60,45 L80,65 L100,35"
+                />
+              </path>
+            </svg>
+          </div>
+
+          <div class="relative grid md:grid-cols-2 gap-8 p-8 md:p-12">
+            <div class="space-y-6 text-white">
+              <h2 class="text-3xl font-bold">Trading & Inversiones</h2>
+              <p class="text-sky-100">
+                Plataforma completa para la gestión de operaciones bursátiles y
+                administración de portafolios.
+              </p>
+              <div class="flex items-center gap-2">
+                <Icon name="tabler:chart-candle" class="w-5 h-5" />
+                <span>Trading en tiempo real</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <Icon
+                    name="tabler:currency-dollar"
+                    class="w-6 h-6 text-sky-300"
+                  />
+                  <h3 class="text-white font-semibold">Divisas</h3>
+                </div>
+                <p class="text-sky-100 text-sm">
+                  Compra y venta de divisas con gestión automatizada
+                </p>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <Icon name="tabler:briefcase" class="w-6 h-6 text-sky-300" />
+                  <h3 class="text-white font-semibold">Portafolios</h3>
+                </div>
+                <p class="text-sky-100 text-sm">
+                  Administración de portafolio de inversiones
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <div class="relative group">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-sky-100 to-sky-50 rounded-xl transform transition-transform group-hover:scale-[0.98]"
+            >
+            </div>
+            <div class="relative p-8 space-y-4">
+              <h3 class="text-xl font-semibold text-sky-900">
+                Gestión de Portafolios
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-center gap-3">
+                  <Icon name="tabler:chart-pie" class="w-5 h-5 text-sky-600" />
+                  <span>Administración portafolio de terceros</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <Icon name="tabler:chart-bar" class="w-5 h-5 text-sky-600" />
+                  <span>Análisis de rendimientos</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <Icon
+                    name="tabler:report-analytics"
+                    class="w-5 h-5 text-sky-600"
+                  />
+                  <span>Reportes personalizados</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="relative group">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-sky-100 to-sky-50 rounded-xl transform transition-transform group-hover:scale-[0.98]"
+            >
+            </div>
+            <div class="relative p-8 space-y-4">
+              <h3 class="text-xl font-semibold text-sky-900">
+                Integración BVC
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-center gap-3">
+                  <Icon name="tabler:world" class="w-5 h-5 text-sky-600" />
+                  <span
+                    >Integración online con la Bolsa de Valores de Colombia</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <Icon name="tabler:clock" class="w-5 h-5 text-sky-600" />
+                  <span>Operaciones en tiempo real</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <Icon
+                    name="tabler:shield-check"
+                    class="w-5 h-5 text-sky-600"
+                  />
+                  <span>Seguridad transaccional</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <ProductCTA
+          title="¿Buscas potenciar tu operación bursátil?"
+          description="Conoce cómo podemos ayudarte en el mercado de valores"
+          showProductsButton={true}
+          isProductPage={true}
+        />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+</style>

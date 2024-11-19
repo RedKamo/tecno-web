@@ -190,43 +190,46 @@ import tecnoLogo from "../../public/tecno-logo.png";
 >
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
+<script is:inline data-astro-rerun>
+  function setupMobileMenu() {
     const menuButton = document.getElementById("menu-button");
     const closeButton = document.getElementById("close-button");
     const mobileMenu = document.getElementById("mobile-menu");
     const overlay = document.getElementById("overlay");
     const body = document.body;
 
+    // Limpiar event listeners anteriores si existen
+    const cleanupListeners = () => {
+      menuButton?.removeEventListener("click", openMenu);
+      closeButton?.removeEventListener("click", closeMenu);
+      overlay?.removeEventListener("click", closeMenu);
+    };
+
     const openMenu = () => {
-      mobileMenu.classList.remove("translate-x-full");
-      overlay.classList.remove("hidden");
-      mobileMenu.setAttribute("aria-hidden", "false");
+      mobileMenu?.classList.remove("translate-x-full");
+      overlay?.classList.remove("hidden");
+      mobileMenu?.setAttribute("aria-hidden", "false");
       body.classList.add("overflow-hidden");
-      document.querySelector("header").style.zIndex = "40";
     };
 
     const closeMenu = () => {
-      mobileMenu.classList.add("translate-x-full");
-      overlay.classList.add("hidden");
-      mobileMenu.setAttribute("aria-hidden", "true");
+      mobileMenu?.classList.add("translate-x-full");
+      overlay?.classList.add("hidden");
+      mobileMenu?.setAttribute("aria-hidden", "true");
       body.classList.remove("overflow-hidden");
-      document.querySelector("header").style.zIndex = "50";
     };
 
-    menuButton.addEventListener("click", openMenu);
-    closeButton.addEventListener("click", closeMenu);
-    overlay.addEventListener("click", closeMenu);
+    // Limpiar listeners anteriores
+    cleanupListeners();
 
-    const submenuButton = document.getElementById("submenu-button");
-    const submenu = document.getElementById("submenu");
-    const submenuIcon = document.getElementById("submenu-icon");
+    // Agregar nuevos listeners
+    menuButton?.addEventListener("click", openMenu);
+    closeButton?.addEventListener("click", closeMenu);
+    overlay?.addEventListener("click", closeMenu);
+  }
 
-    submenuButton.addEventListener("click", function () {
-      submenu.classList.toggle("hidden");
-      submenuIcon.classList.toggle("rotate-180");
-    });
-  });
+  // Ejecutar en la carga inicial y después de cada navegación
+  document.addEventListener('astro:page-load', setupMobileMenu, { once: false });
 </script>
 
 <script>

@@ -3,13 +3,20 @@ import { Icon } from "astro-icon/components";
 import Layout from "@/layouts/Layout.astro";
 import ProductBanner from "@/components/ProductBanner.astro";
 import ProductCTA from "../ProductCTA.astro";
-
-const title = 'Solución bancaria';
-const icon = '/icons/logoBancaria.svg';
 ---
 
 <Layout title="Solución Bancaria">
-  <ProductBanner title={title} icon={icon} />
+  <ProductBanner
+    title="Solución Bancaria"
+    icon="/icons/logoBancaria.svg"
+    bgImage="/images/products/bancaria-bg.webp"
+    category="Solución Bancaria"
+    features={[
+      "Gestión de Colocaciones",
+      "Control de Captaciones",
+      "Administración Integral",
+    ]}
+  />
   <div class="max-w-6xl mx-auto px-0 sm:px-8">
     <div class="py-16">
       <div class="px-4 sm:px-0">
@@ -17,13 +24,13 @@ const icon = '/icons/logoBancaria.svg';
           Gestión Integral para el Sector Financiero
         </h1>
         <p class="text-base md:text-lg leading-relaxed mb-14">
-          Esta solución informática está dirigida al sector financiero: Bancario, Micro finanzas, 
-          Compañías de financiamiento comercial, ONG financieras, Cooperativas financieras y 
-          fondos de pensiones. Orientada a la administración de captaciones, Colocaciones y Caja financiera.
+          Esta solución informática está dirigida al sector financiero:
+          Bancario, Micro finanzas, Compañías de financiamiento comercial, ONG
+          financieras, Cooperativas financieras y fondos de pensiones. Orientada
+          a la administración de captaciones, Colocaciones y Caja financiera.
         </p>
       </div>
 
-      {/* Sección de Características Principales */}
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-14">
         <div class="space-y-6 px-4 sm:px-0">
           <h2 class="text-3xl font-semibold text-sky-700 mb-6">Colocaciones</h2>
@@ -74,10 +81,11 @@ const icon = '/icons/logoBancaria.svg';
         </div>
       </div>
 
-      {/* Sección de Características Adicionales */}
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-14">
         <div class="space-y-6 px-4 sm:px-0">
-          <h2 class="text-3xl font-semibold text-sky-700 mb-6">Administración</h2>
+          <h2 class="text-3xl font-semibold text-sky-700 mb-6">
+            Administración
+          </h2>
           <div class="bg-white rounded-xl p-6 shadow-sm border border-sky-100">
             <ul class="space-y-3">
               <li class="flex items-center gap-2">
@@ -101,7 +109,9 @@ const icon = '/icons/logoBancaria.svg';
         </div>
 
         <div class="space-y-6 px-4 sm:px-0">
-          <h2 class="text-3xl font-semibold text-sky-700 mb-6">Transaccional</h2>
+          <h2 class="text-3xl font-semibold text-sky-700 mb-6">
+            Transaccional
+          </h2>
           <div class="bg-white rounded-xl p-6 shadow-sm border border-sky-100">
             <ul class="space-y-3">
               <li class="flex items-center gap-2">
@@ -125,7 +135,6 @@ const icon = '/icons/logoBancaria.svg';
         </div>
       </div>
 
-      {/* CTA */}
       <ProductCTA
         title="¿Necesitas más información sobre nuestra Solución Bancaria?"
         description="Contáctanos para una demostración personalizada"

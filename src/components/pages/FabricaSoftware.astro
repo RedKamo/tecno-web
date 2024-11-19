@@ -1,0 +1,218 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "@/layouts/Layout.astro";
+import ProductBanner from "@/components/ProductBanner.astro";
+import ProductCTA from "../ProductCTA.astro";
+---
+
+<Layout title="Fábrica de Software">
+  <ProductBanner
+    title="Fábrica de Software"
+    icon="/icons/logoFabrica.svg"
+    bgImage="/images/products/fabrica-bg.webp"
+    category="Servicios Tecnológicos"
+    features={[
+      "Desarrollo a Medida",
+      "Integración de Sistemas",
+      "Soluciones Financieras",
+    ]}
+  />
+
+  <div class="max-w-6xl mx-auto px-0 sm:px-8">
+    <div class="py-16">
+      <div class="px-4 sm:px-0">
+        <h1 class="text-4xl font-bold mb-6">
+          Desarrollo de Soluciones Tecnológicas Financieras
+        </h1>
+        <p class="text-base md:text-lg leading-relaxed mb-14">
+          Mediante este servicio se implementan y diseñan nuevas alternativas
+          que permiten soluciones informáticas a las compañías del sector
+          financiero que requieran el desarrollo de nuevas tecnologías, negocios
+          y servicios.
+        </p>
+
+        <div
+          class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-sky-900 to-sky-800 p-8 md:p-12 mb-16"
+        >
+          <div class="absolute inset-0 opacity-15">
+            <svg
+              class="w-full h-full"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <pattern
+                  id="grid"
+                  width="20"
+                  height="20"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path
+                    d="M 20 0 L 0 0 0 20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="0.5"
+                    class="text-sky-200/40"></path>
+                </pattern>
+              </defs>
+              <rect width="100" height="100" fill="url(#grid)"></rect>
+            </svg>
+          </div>
+
+          <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+            <div class="text-white space-y-6">
+              <h2 class="text-3xl font-bold">Servicios Especializados</h2>
+              <p class="text-sky-100">
+                Desarrollamos soluciones tecnológicas adaptadas a las
+                necesidades específicas del sector financiero.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div
+                class="bg-gradient-to-r from-white/15 to-white/10 backdrop-blur-sm rounded-xl p-6 hover:translate-x-2 transition-transform"
+              >
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="bg-sky-500/20 p-2 rounded-lg">
+                    <Icon name="tabler:code" class="w-6 h-6 text-sky-300" />
+                  </div>
+                  <h3 class="text-white font-semibold">Desarrollo</h3>
+                </div>
+                <p class="text-sky-100 text-sm">
+                  Nuevas funcionalidades y sistemas a medida
+                </p>
+              </div>
+
+              <div
+                class="bg-gradient-to-r from-white/15 to-white/10 backdrop-blur-sm rounded-xl p-6 hover:translate-x-2 transition-transform"
+              >
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="bg-sky-500/20 p-2 rounded-lg">
+                    <Icon
+                      name="tabler:arrows-right-left"
+                      class="w-6 h-6 text-sky-300"
+                    />
+                  </div>
+                  <h3 class="text-white font-semibold">Integración</h3>
+                </div>
+                <p class="text-sky-100 text-sm">
+                  Conexión entre sistemas y plataformas
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-16">
+          <h2 class="text-3xl font-semibold text-sky-900 mb-12">
+            Nuestro Proceso
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {
+              [
+                {
+                  icon: "tabler:bulb",
+                  title: "Implantación",
+                  description: "Implementación efectiva de soluciones",
+                  position: "top-left",
+                  color: "bg-sky-100/70",
+                  iconColor: "text-sky-600",
+                  align: "text-left",
+                },
+                {
+                  icon: "tabler:adjustments",
+                  title: "Personalización",
+                  description: "Adaptación a necesidades específicas",
+                  position: "top-right",
+                  color: "bg-blue-100/70",
+                  iconColor: "text-blue-600",
+                  align: "text-right",
+                },
+                {
+                  icon: "tabler:puzzle",
+                  title: "Integración",
+                  description: "Conexión con sistemas existentes",
+                  position: "bottom-left",
+                  color: "bg-sky-200/70",
+                  iconColor: "text-sky-700",
+                  align: "text-left",
+                },
+                {
+                  icon: "tabler:tool",
+                  title: "Desarrollo",
+                  description: "Nuevas funcionalidades",
+                  position: "bottom-right",
+                  color: "bg-blue-200/70",
+                  iconColor: "text-blue-700",
+                  align: "text-right",
+                },
+              ].map((step, index) => (
+                <div class="relative group">
+                  <div
+                    class={`bg-white rounded-2xl p-6 shadow-sm relative overflow-hidden min-h-[200px] flex`}
+                  >
+                    <div
+                      class={`absolute ${
+                        index === 0
+                          ? "-bottom-12 -right-12"
+                          : index === 1
+                            ? "-bottom-12 -left-12"
+                            : index === 2
+                              ? "-top-12 -right-12"
+                              : "-top-12 -left-12"
+                      } w-24 h-24 ${step.color} rounded-full opacity-60`}
+                    />
+
+                    <div
+                      class={`relative z-10 ${
+                        index === 0
+                          ? "self-start"
+                          : index === 1
+                            ? "self-start ml-auto"
+                            : index === 2
+                              ? "self-end"
+                              : "self-end ml-auto"
+                      } ${step.align}`}
+                    >
+                      <div
+                        class={`flex items-center gap-3 mb-4 ${
+                          index % 2 === 0 ? "" : "flex-row-reverse"
+                        }`}
+                      >
+                        <div
+                          class={`w-10 h-10 rounded-full ${step.color} flex items-center justify-center shadow-sm`}
+                        >
+                          <Icon
+                            name={step.icon}
+                            class={`w-5 h-5 ${step.iconColor}`}
+                          />
+                        </div>
+                        <span class="text-sm font-medium text-sky-600">
+                          PASO {index + 1}
+                        </span>
+                      </div>
+
+                      <h3 class="font-semibold text-gray-900 text-lg mb-2">
+                        {step.title}
+                      </h3>
+                      <p class="text-gray-600 max-w-[250px]">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <ProductCTA
+          title="¿Necesitas una solución tecnológica a medida?"
+          description="Conversemos sobre tus requerimientos tecnológicos"
+          showProductsButton={true}
+          isProductPage={true}
+        />
+      </div>
+    </div>
+  </div>
+</Layout>

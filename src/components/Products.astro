@@ -1,24 +1,111 @@
 ---
-import ProductCard from './ProductCard.astro';
-import { getAllProducts } from '@/data/products';
+import ProductCard from "./ProductCard.astro";
+import { getAllProducts } from "@/data/products";
 
 const products = getAllProducts();
 ---
-<section id="productos" class="py-16 md:py-24">
-  <div class="max-w-[1440px] mx-auto px-8">
+
+<section id="productos" class="relative py-24">
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-white via-gray-50/20 to-white/60"
+  >
+    <div
+      class="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-70 [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"
+    >
+    </div>
+  </div>
+
+  <div class="relative max-w-[1440px] mx-auto px-6">
     <div class="text-center mb-16">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+      <div
+        class="inline-flex items-center justify-center px-4 py-1.5 mb-4 text-sm font-medium rounded-full border border-sky-100 bg-sky-50 text-sky-700"
+      >
+        <span class="relative flex h-2 w-2 mr-2">
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"
+          ></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"
+          ></span>
+        </span>
+        Nuestras soluciones
+      </div>
+
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">
         Productos y Servicios
       </h2>
-      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-        Soluciones especializadas para el sector financiero
+
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+        Soluciones tecnológicas especializadas para impulsar tu negocio en el
+        sector financiero
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {products.map((product) => (
-        <ProductCard {...product} />
-      ))}
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10"
+    >
+      {
+        products.map((product, index) => (
+          <div
+            class="animate-fade-up h-full"
+            style={`animation-delay: ${index * 150}ms; animation-fill-mode: both;`}
+          >
+            <ProductCard {...product} />
+          </div>
+        ))
+      }
+    </div>
+
+    <div
+      class="absolute top-1/2 -translate-y-1/2 left-0 w-72 h-72 bg-sky-100 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blob"
+      aria-hidden="true"
+      role="presentation"
+    >
+    </div>
+    <div
+      class="absolute top-1/2 -translate-y-1/2 right-0 w-72 h-72 bg-sky-200 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blob animation-delay-2000"
+      aria-hidden="true"
+      role="presentation"
+    >
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

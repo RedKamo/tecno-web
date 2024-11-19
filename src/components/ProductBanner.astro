@@ -1,16 +1,89 @@
 ---
-// src/components/ProductBanner.astro
 interface Props {
   title: string;
   icon: string;
+  bgImage: string;  // Imagen de fondo específica del producto
+  features?: string[];  // Características destacadas (opcional)
+  category?: string;  // Categoría del producto (ej: "Solución Bancaria", "Herramienta de Migración", etc.)
 }
 
-const { title, icon } = Astro.props;
+const { 
+  title, 
+  icon, 
+  bgImage, 
+  features = [], 
+  category = "Solución Empresarial" 
+} = Astro.props;
 ---
 
-<section class="bg-sky-200 py-20">
-  <div class="container mx-auto flex flex-col items-center text-center">
-      <img src={icon} alt={title} class="h-24 w-24 mb-4" />
-      <h1 class="text-5xl font-bold text-gray-800">{title}</h1>
+<section class="relative bg-gradient-to-b from-sky-100 to-white py-24 overflow-hidden">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0">
+    <img 
+      src={bgImage} 
+      alt="" 
+      class="absolute w-full h-full object-cover object-center opacity-10"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-sky-100/90 to-white"></div>
+    <div class="absolute inset-0 bg-grid-slate-900/[0.04] bg-[size:32px]"></div>
+  </div>
+
+  <div class="container relative mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Left Content -->
+      <div class="text-center md:text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-sm font-medium mb-6">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+          </span>
+          {category}
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          {title}
+          <span class="block h-1.5 w-24 bg-sky-500 mt-4 rounded-full md:mx-0"></span>
+        </h1>
+
+        {features.length > 0 && (
+          <div class="flex flex-wrap gap-3 mt-8">
+            {features.map(feature => (
+              <span class="px-4 py-2 rounded-lg bg-white/50 border border-sky-100 text-sky-800 text-sm">
+                {feature}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <!-- Right Content -->
+      <div class="relative flex justify-center md:justify-end">
+        <div class="relative">
+          <!-- Decorative circles -->
+          <div class="absolute -inset-4 bg-gradient-to-r from-sky-400 to-sky-300 opacity-30 blur-lg rounded-full"></div>
+          <div class="absolute inset-0 bg-white/40 backdrop-blur-sm rounded-full"></div>
+          
+          <img 
+            src={icon} 
+            alt={title} 
+            class="relative h-32 w-32 transform hover:scale-105 transition-transform duration-300" 
+          />
+        </div>
+
+        <!-- Floating elements -->
+        <div class="absolute top-0 right-0 -mr-4 w-24 h-24 bg-sky-200/50 rounded-full blur-xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-4 w-20 h-20 bg-sky-300/50 rounded-full blur-xl"></div>
+      </div>
     </div>
+  </div>
+
+  <!-- Decorative shapes -->
+  <div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-sky-200 rounded-full blur-3xl opacity-20"></div>
+  <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-sky-300 rounded-full blur-3xl opacity-20"></div>
 </section>
+
+<style>
+  .bg-grid-slate-900 {
+    mask-image: linear-gradient(to bottom, transparent, black, transparent);
+  }
+</style>

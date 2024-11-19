@@ -1,0 +1,140 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "@/layouts/Layout.astro";
+import ProductBanner from "@/components/ProductBanner.astro";
+import ProductCTA from "../ProductCTA.astro";
+---
+
+<Layout title="Tesorería Financiera">
+  <ProductBanner
+    title="Tesorería Financiera"
+    icon="/icons/logoTesoreria.svg"
+    bgImage="/images/tesoreria-bg.jpg"
+    category="Solución Bancaria"
+    features={[
+      "Gestión de Portafolios",
+      "Control de Riesgos",
+      "Operaciones en Divisas",
+    ]}
+  />
+  <div class="max-w-6xl mx-auto px-0 sm:px-8">
+    <div class="py-16">
+      <div class="px-4 sm:px-0">
+        <h1 class="text-4xl font-bold mb-6">Gestión Integral de Tesorería</h1>
+        <p class="text-base md:text-lg leading-relaxed mb-14">
+          Solución informática dirigida a las empresas del sector bancario,
+          financiero, fiduciario, fondos de pensiones, asegurador, compañías de
+          financiamiento comercial y en general a cualquier mesa de dinero.
+          Interactúa con fuentes como Bloomberg, Star, Mec, Summit, Sen, Reuter,
+          SetFx, Murex entre otros.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-sky-100">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="bg-sky-50 p-3 rounded-full">
+                <Icon name="tabler:chart-dots" class="w-6 h-6 text-sky-600" />
+              </div>
+              <h3 class="text-lg font-semibold">
+                Administración de portafolios de inversión
+              </h3>
+            </div>
+            <p class="text-gray-700">
+              Control y gestión integral de portafolios de inversión.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-sky-100">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="bg-sky-50 p-3 rounded-full">
+                <Icon
+                  name="tabler:currency-dollar"
+                  class="w-6 h-6 text-sky-600"
+                />
+              </div>
+              <h3 class="text-lg font-semibold">
+                Divisas – Cambios internacionales
+              </h3>
+            </div>
+            <p class="text-gray-700">
+              Gestión de operaciones en divisas y cambios internacionales.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-sky-100">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="bg-sky-50 p-3 rounded-full">
+                <Icon name="tabler:shield-check" class="w-6 h-6 text-sky-600" />
+              </div>
+              <h3 class="text-lg font-semibold">
+                Cámara de riesgo central de contraparte (CRCC)
+              </h3>
+            </div>
+            <p class="text-gray-700">
+              Control y gestión de riesgos de contraparte en operaciones.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-sky-100">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="bg-sky-50 p-3 rounded-full">
+                <Icon
+                  name="tabler:file-analytics"
+                  class="w-6 h-6 text-sky-600"
+                />
+              </div>
+              <h3 class="text-lg font-semibold">Emisión pasiva</h3>
+            </div>
+            <p class="text-gray-700">Gestión y control de emisiones pasivas.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-sky-100">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="bg-sky-50 p-3 rounded-full">
+                <Icon
+                  name="tabler:file-description"
+                  class="w-6 h-6 text-sky-600"
+                />
+              </div>
+              <h3 class="text-lg font-semibold">Cartera pasiva</h3>
+            </div>
+            <p class="text-gray-700">
+              Administración y seguimiento de cartera pasiva.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-sky-100">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="bg-sky-50 p-3 rounded-full">
+                <Icon name="tabler:chart-bar" class="w-6 h-6 text-sky-600" />
+              </div>
+              <h3 class="text-lg font-semibold">Riesgo de Mercado</h3>
+            </div>
+            <p class="text-gray-700">
+              Análisis y control de riesgos de mercado.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-sky-100">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="bg-sky-50 p-3 rounded-full">
+                <Icon name="tabler:chart-arrows" class="w-6 h-6 text-sky-600" />
+              </div>
+              <h3 class="text-lg font-semibold">Riesgo de Liquidez</h3>
+            </div>
+            <p class="text-gray-700">
+              Gestión y monitoreo de riesgos de liquidez.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <ProductCTA
+        title="¿Necesitas más información sobre Tesorería Financiera?"
+        description="Permítanos ayudarle a resolver todas sus dudas de forma personalizada."
+        showProductsButton={true}
+        isProductPage={true}
+      />
+    </div>
+  </div>
+</Layout>

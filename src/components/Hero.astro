@@ -1,51 +1,114 @@
 ---
 import { Icon } from "astro-icon/components";
-// Props si necesitas
 ---
 
-<section
-  class="relative h-[450px] md:h-[600px] lg:h-[700px] text-white mb-24 rounded-tl-xl rounded-tr-xl rounded-bl-xl overflow-hidden z-0"
->
-  <video
-    autoplay
-    muted
-    loop
-    class="absolute top-0 left-0 w-full h-full object-cover z-0"
-  >
-    <source src="/herobg.mp4" type="video/mp4" />
-  </video>
+<section class="relative min-h-[70vh] text-white">
+  <div class="absolute inset-0 z-0">
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/90 md:bg-gradient-to-r md:from-black/80 md:via-black/50 md:to-transparent z-10 rounded-b-lg"
+    >
+    </div>
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      class="absolute top-0 left-0 w-full h-full object-cover rounded-b-lg"
+      aria-label="Video de fondo mostrando interfaces de software financiero"
+    >
+      <source src="/herobg.mp4" type="video/mp4" />
+      <track
+        kind="captions"
+        src="/captions/hero-video.vtt"
+        srclang="es"
+        label="Español"
+      />
+    </video>
+  </div>
 
-  <div class="h-full max-w-[1440px] mx-auto relative z-10">
-    <div class="h-full flex flex-col text-pretty">
-      <div class="h-[90%] flex items-center px-4 sm:px-6 lg:px-8">
-        <div class="w-full lg:w-[78%]">
-          <h1
-            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+  <div
+    class="relative h-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 z-20 py-12 md:py-20"
+  >
+    <div class="h-full flex flex-col min-h-[calc(70vh-4rem)]">
+      <div
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-500/30 bg-white/5 backdrop-blur-sm mb-6 self-start"
+      >
+        <span class="relative flex h-2 w-2">
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"
+          ></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"
+          ></span>
+        </span>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1">
+            <span class="font-bold text-white">CMMI</span>
+            <span class="text-white">DEV</span>
+            <span class="text-sky-400">/3</span>
+            <span class="text-[10px] text-sky-400 align-top">℠</span>
+          </div>
+          <span class="text-[10px] text-gray-400"
+            >Exp. 2027-12-22 / Appraisal #25953</span
           >
-            Impulsamos la <span class="gradient-text">tecnología</span> de tu negocio
-          </h1>
-          <p class="w-full md:w-[70%] lg:w-[80%] text-xl md:text-2xl my-12">
-            Más de 25 años ofreciendo tecnología y asesoría en sistemas de
-            información para empresas como la tuya.
-          </p>
-          <button
-            class="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#012537] rounded-lg hover:bg-blue-50 transition-colors"
-          >
-            <Icon name="tabler:mail" class="w-5 h-5" />
-            Contáctanos
-          </button>
         </div>
       </div>
 
-      <div class="h-[10%] flex items-center justify-center md:justify-end">
-        <div
-          class="bg-white rounded-t-lg md:rounded-tl-lg md:rounded-tr-none flex items-center justify-center p-2 w-3/4 sm:w-1/2 md:w-auto"
+      <div class="flex-grow flex flex-col justify-center max-w-3xl">
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
         >
-          <img
-            src="/cmmi3marcapais.webp"
-            alt="Certificaciones"
-            class="w-full h-auto"
-          />
+          Impulsamos la <span class="gradient-text relative inline-block"
+            >tecnología
+            <svg
+              class="absolute -bottom-2 left-0 w-full"
+              viewBox="0 0 358 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 5.26C90.3333 2.42667 267.667 -0.406667 357 5.26"
+                stroke="#00BAE9"
+                stroke-width="2"></path>
+            </svg>
+          </span>
+          <br class="md:hidden" /><span class="md:ml-3">de tu negocio</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-gray-200 mb-8 max-w-2xl">
+          Más de 25 años ofreciendo tecnología y asesoría en sistemas de
+          información para empresas como la tuya.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 mb-12">
+          <a
+            href="mailto:ventas@tecnoevolucion.com"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#012537] rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+          >
+            <Icon name="tabler:mail" class="w-5 h-5" aria-hidden="true" />
+            Contáctanos
+          </a>
+          <a
+            href="#productos"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/20 rounded-lg hover:bg-white/10 transition-all duration-500 ease-in-out"
+          >
+            <span>Ver soluciones</span>
+            <Icon
+              name="tabler:arrow-right"
+              class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-500 ease-in-out"
+            />
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 gap-8 border-t border-white/10 pt-8 mt-12">
+          <div>
+            <p class="text-2xl sm:text-3xl font-bold">+25</p>
+            <p class="text-sm text-gray-300">Años de experiencia</p>
+          </div>
+          <div>
+            <p class="text-2xl sm:text-3xl font-bold">+15</p>
+            <p class="text-sm text-gray-300">Clientes activos</p>
+          </div>
         </div>
       </div>
     </div>
@@ -57,5 +120,9 @@ import { Icon } from "astro-icon/components";
     background: linear-gradient(90deg, #067ebb, #00bae9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 </style>

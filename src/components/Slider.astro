@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { getAllClients } from "@/data/clients";
 const clientLogos = getAllClients();
 ---
@@ -18,21 +19,34 @@ const clientLogos = getAllClients();
     <div class="relative">
       <div
         class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"
+        aria-hidden="true"
+        role="presentation"
       >
       </div>
       <div
         class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"
+        aria-hidden="true"
+        role="presentation"
       >
       </div>
-      <div class="overflow-hidden">
-        <ul class="flex animate-infinite-slider min-w-max">
+      <div class="overflow-hidden" role="region" aria-label="Logos de clientes">
+        <ul class="flex animate-infinite-slider min-w-max" role="list">
           {
             clientLogos.concat(clientLogos).map((client) => (
-              <li class="flex-shrink-0 p-4 flex items-center justify-center">
-                <div class="group w-20 h-20 md:w-36 px-2 flex items-center justify-center rounded-lg overflow-hidden bg-white shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
-                  <img
+              <li
+                class="flex-shrink-0 p-4 flex items-center justify-center"
+                role="listitem"
+              >
+                <div
+                  class="group w-20 h-20 md:w-36 px-2 flex items-center justify-center rounded-lg overflow-hidden bg-white shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300"
+                  role="img"
+                  aria-label={`Logo de ${client.alt}`}
+                >
+                  <Image
                     src={client.logo}
                     alt={client.alt}
+                    width={144}
+                    height={144}
                     class="max-w-full max-h-full object-contain filter grayscale transition duration-300 group-hover:filter-none"
                   />
                 </div>
