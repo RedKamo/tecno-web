@@ -1,107 +1,126 @@
 ---
-import { Image } from 'astro:assets';
-import { Icon } from 'astro-icon/components';
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 ---
 
-<footer class="w-full bg-gradient-to-b from-[#012537] to-[#001824] text-white pt-14">
-    <div class="max-w-[1440px] mx-auto px-8">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-x-16 gap-y-12 mb-16">
-            <!-- Columna 1: Logo e Info -->
-            <div class="md:col-span-4 space-y-8">
-                <Image 
-                    src="/tecno-logo-white.webp" 
-                    alt="Tecnoevolución" 
-                    width={208}
-                    height={80}
-                    class="w-52"
-                />
-                <div class="mt-8">
-                    <p class="font-medium text-white mb-4">Oficina Principal</p>
-                    <div class="flex items-start space-x-3 text-gray-300">
-                        <Icon name="tabler:map-pin" class="w-5 h-5 mt-1 flex-shrink-0 text-white" />
-                        <p class="leading-relaxed">
-                            Bogotá, Colombia - Sur América<br />
-                            Calle 26 No. 69 - 63<br />
-                            Centro Empresarial Torre 26 - oficina 211
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Columna 2: Enlaces -->
-            <div class="md:col-span-3">
-                <p class="font-medium text-white mb-6">Enlaces</p>
-                <nav class="space-y-3 text-gray-300">
-                    <a href="/" class="block hover:text-white transition-colors">Inicio</a>
-                    <a href="/sobre-nosotros" class="block hover:text-white transition-colors">Sobre Nosotros</a>
-                    <a href="/#productos" class="block hover:text-white transition-colors">Productos y Servicios</a>
-                    <a href="/clientes" class="block hover:text-white transition-colors">Clientes</a>
-                </nav>
-            </div>
-
-            <!-- Columna 3: Contacto -->
-            <div class="md:col-span-3">
-                <p class="font-medium text-white mb-6">Contáctanos</p>
-                <div class="space-y-3 text-gray-300">
-                    <div class="flex items-center space-x-3">
-                        <Icon name="tabler:phone" class="w-5 h-5 text-white" />
-                        <span>+57 (1) 427 0717</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <Icon name="tabler:device-mobile" class="w-5 h-5 text-white" />
-                        <span>+57 320 854 4261</span>
-                    </div>
-                    <a href="mailto:ventas@tecnoevolucion.com" 
-                        class="flex items-center space-x-3 hover:text-white transition-colors">
-                        <Icon name="tabler:mail" class="w-5 h-5 text-white" />
-                        <span>ventas@tecnoevolucion.com</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Columna 4: Redes Sociales -->
-            <div class="md:col-span-2">
-                <p class="font-medium text-white mb-6">¡Síguenos!</p>
-                <div class="flex space-x-6">
-                    <a 
-                        href="https://web.facebook.com/people/Tecnoevoluci%C3%B3n/100076109487873/?ref=hl" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-white hover:text-sky-400 transition-colors" 
-                        aria-label="Síguenos en Facebook"
-                    >
-                        <Icon name="tabler:brand-facebook" class="w-6 h-6" />
-                    </a>
-                    <a 
-                        href="https://www.linkedin.com/company/tecnoevolucion" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-white hover:text-sky-400 transition-colors" 
-                        aria-label="Síguenos en LinkedIn"
-                    >
-                        <Icon name="tabler:brand-linkedin" class="w-6 h-6" />
-                    </a>
-                    <a 
-                        href="https://x.com/Tecnoevolucionc" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-white hover:text-sky-400 transition-colors" 
-                        aria-label="Síguenos en X (antes Twitter)"
-                    >
-                        <Icon name="tabler:brand-x" class="w-6 h-6" />
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Barra inferior -->
-        <div class="flex flex-col sm:flex-row justify-between items-center border-t border-white/10 py-6 space-y-4 sm:space-y-0">
-            <p class="text-sm text-gray-400 text-center sm:text-left">
-                © 2024 Tecnoevolución Diálogo Software SAS. Todos los derechos reservados
+<footer
+  class="w-full bg-gradient-to-b from-[#012537] to-[#001824] text-white pt-14"
+>
+  <div class="max-w-[1440px] mx-auto px-8">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-x-16 gap-y-12 mb-16">
+      <div class="md:col-span-4 space-y-8">
+        <Image
+          src="/tecno-logo-white.webp"
+          alt="Tecnoevolución"
+          width={208}
+          height={80}
+          class="w-52"
+        />
+        <div class="mt-8">
+          <p class="font-medium text-white mb-4">Oficina Principal</p>
+          <div class="flex items-start space-x-3 text-gray-300">
+            <Icon
+              name="tabler:map-pin"
+              class="w-5 h-5 mt-1 flex-shrink-0 text-white"
+            />
+            <p class="leading-relaxed">
+              Bogotá, Colombia - Sur América<br />
+              Calle 26 No. 69 - 63<br />
+              Centro Empresarial Torre 26 - oficina 211
             </p>
-            <a href="/politica-privacidad" class="text-sm text-gray-400 hover:text-white transition-colors">
-                Tratamiento de datos personales
-            </a>
+          </div>
         </div>
+      </div>
+
+      <div class="md:col-span-3">
+        <p class="font-medium text-white mb-6">Enlaces</p>
+        <nav class="space-y-3 text-gray-300">
+          <a href="/" class="block hover:text-white transition-colors">Inicio</a
+          >
+          <a
+            href="/sobre-nosotros"
+            class="block hover:text-white transition-colors">Sobre Nosotros</a
+          >
+          <a href="/#productos" class="block hover:text-white transition-colors"
+            >Productos y Servicios</a
+          >
+          <a href="/clientes" class="block hover:text-white transition-colors"
+            >Clientes</a
+          >
+        </nav>
+      </div>
+
+      <div class="md:col-span-3">
+        <p class="font-medium text-white mb-6">Contáctanos</p>
+        <div class="space-y-3 text-gray-300">
+          <div class="flex items-center space-x-3">
+            <Icon name="tabler:phone" class="w-5 h-5 text-white" />
+            <span>+57 (1) 427 0717</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <Icon name="tabler:device-mobile" class="w-5 h-5 text-white" />
+            <span>+57 320 854 4261</span>
+          </div>
+          <a
+            href="mailto:ventas@tecnoevolucion.com"
+            class="flex items-center space-x-3 hover:text-white transition-colors"
+          >
+            <Icon name="tabler:mail" class="w-5 h-5 text-white" />
+            <span>ventas@tecnoevolucion.com</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="md:col-span-2">
+        <p class="font-medium text-white mb-6">¡Síguenos!</p>
+        <div class="flex space-x-6">
+          <a
+            href="https://web.facebook.com/people/Tecnoevoluci%C3%B3n/100076109487873/?ref=hl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white hover:text-sky-400 transition-colors"
+            aria-label="Síguenos en Facebook"
+          >
+            <Icon name="tabler:brand-facebook" class="w-6 h-6" />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/tecnoevolucion"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white hover:text-sky-400 transition-colors"
+            aria-label="Síguenos en LinkedIn"
+          >
+            <Icon name="tabler:brand-linkedin" class="w-6 h-6" />
+          </a>
+          <a
+            href="https://x.com/Tecnoevolucionc"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white hover:text-sky-400 transition-colors"
+            aria-label="Síguenos en X (antes Twitter)"
+          >
+            <Icon name="tabler:brand-x" class="w-6 h-6" />
+          </a>
+        </div>
+      </div>
     </div>
+
+    <div
+      class="flex flex-col sm:flex-row justify-between items-center border-t border-white/10 py-6 space-y-4 sm:space-y-0"
+    >
+      <p class="text-sm text-gray-400 text-center sm:text-left">
+        © 2024 Tecnoevolución Diálogo Software SAS. Todos los derechos
+        reservados
+      </p>
+      <a
+        href="/docs/tratamiento-de-datos.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2 hover:underline"
+      >
+        <Icon name="tabler:file-text" class="w-4 h-4" />
+        Política de Tratamiento de Datos Personales
+      </a>
+    </div>
+  </div>
 </footer>

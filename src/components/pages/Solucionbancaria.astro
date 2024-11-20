@@ -1,15 +1,14 @@
 ---
-import { Icon } from "astro-icon/components";
 import Layout from "@/layouts/Layout.astro";
 import ProductBanner from "@/components/ProductBanner.astro";
 import ProductCTA from "../ProductCTA.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="Solución Bancaria">
   <ProductBanner
     title="Solución Bancaria"
-    icon="/icons/logoBancaria.svg"
-    bgImage="/images/products/bancaria-bg.webp"
+    iconName="tabler:building-bank"
     category="Solución Bancaria"
     features={[
       "Gestión de Colocaciones",
@@ -17,6 +16,9 @@ import ProductCTA from "../ProductCTA.astro";
       "Administración Integral",
     ]}
   />
+  <div class="bg-gradient-to-b from-sky-50/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8"></div>
+  </div>
   <div class="max-w-6xl mx-auto px-0 sm:px-8">
     <div class="py-16">
       <div class="px-4 sm:px-0">

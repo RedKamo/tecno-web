@@ -96,14 +96,16 @@ import tecnoLogo from "../../public/tecno-logo.png";
         >
 
         <a
-          href="mailto:ventas@tecnoevolucion.com"
-          class="inline-flex items-center gap-2 px-6 py-3 bg-[#012537] text-white rounded-lg hover:bg-[#001824] transition-colors"
+          href="/contacto"
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#005D81]/30 bg-white/5 hover:bg-[#005D81]/5 transition-colors whitespace-nowrap"
         >
-          <img
-            src="/icons/mail-icon.svg"
-            alt="Ícono de contacto"
-            class="w-5 h-5"
-          />
+          <span class="relative flex h-2 w-2">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00BA88] opacity-75"
+            ></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-[#00BA88]"
+            ></span>
+          </span>
           Contacto
         </a>
       </div>
@@ -163,9 +165,7 @@ import tecnoLogo from "../../public/tecno-logo.png";
       <a href="/sobre-nosotros" class="block text-gray-800 hover:text-[#012537]"
         >Sobre nosotros</a
       >
-      <a
-        href="/#productos"
-        class="block text-gray-800 hover:text-[#012537]"
+      <a href="/#productos" class="block text-gray-800 hover:text-[#012537]"
         >Productos y Servicios</a
       >
       <a href="/clientes" class="block text-gray-800 hover:text-[#012537]"
@@ -173,10 +173,16 @@ import tecnoLogo from "../../public/tecno-logo.png";
       >
 
       <a
-        href="mailto:ventas@tecnoevolucion.com"
-        class="inline-flex items-center gap-2 px-6 py-3 bg-[#012537] text-white rounded-lg hover:bg-[#001824] transition-colors w-full justify-center mt-6"
+        href="/contacto"
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#005D81]/30 bg-white/5 hover:bg-[#005D81]/5 transition-colors"
       >
-        <Icon name="tabler:mail" class="w-5 h-5" />
+        <span class="relative flex h-2 w-2">
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00BA88] opacity-75"
+          ></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-[#00BA88]"
+          ></span>
+        </span>
         Contacto
       </a>
     </div>
@@ -198,7 +204,6 @@ import tecnoLogo from "../../public/tecno-logo.png";
     const overlay = document.getElementById("overlay");
     const body = document.body;
 
-    // Limpiar event listeners anteriores si existen
     const cleanupListeners = () => {
       menuButton?.removeEventListener("click", openMenu);
       closeButton?.removeEventListener("click", closeMenu);
@@ -219,17 +224,16 @@ import tecnoLogo from "../../public/tecno-logo.png";
       body.classList.remove("overflow-hidden");
     };
 
-    // Limpiar listeners anteriores
     cleanupListeners();
 
-    // Agregar nuevos listeners
     menuButton?.addEventListener("click", openMenu);
     closeButton?.addEventListener("click", closeMenu);
     overlay?.addEventListener("click", closeMenu);
   }
 
-  // Ejecutar en la carga inicial y después de cada navegación
-  document.addEventListener('astro:page-load', setupMobileMenu, { once: false });
+  document.addEventListener("astro:page-load", setupMobileMenu, {
+    once: false,
+  });
 </script>
 
 <script>
@@ -258,22 +262,22 @@ import tecnoLogo from "../../public/tecno-logo.png";
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenu = document.getElementById('mobile-menu');
-    const overlay = document.getElementById('overlay');
+  document.addEventListener("DOMContentLoaded", () => {
+    const mobileMenu = document.getElementById("mobile-menu");
+    const overlay = document.getElementById("overlay");
     const menuLinks = document.querySelectorAll('a[href^="/#"]');
 
     const closeMenu = () => {
-      mobileMenu.classList.add('translate-x-full');
-      overlay.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
-      document.querySelector('header').style.zIndex = '50';
+      mobileMenu.classList.add("translate-x-full");
+      overlay.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+      document.querySelector("header").style.zIndex = "50";
     };
 
-    menuLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
         e.preventDefault();
-        const targetId = link.getAttribute('href').split('#')[1];
+        const targetId = link.getAttribute("href").split("#")[1];
         const targetSection = document.getElementById(targetId);
 
         if (targetSection) {
@@ -281,12 +285,12 @@ import tecnoLogo from "../../public/tecno-logo.png";
 
           setTimeout(() => {
             // Scroll
-            const headerHeight = document.querySelector('header').offsetHeight;
+            const headerHeight = document.querySelector("header").offsetHeight;
             const targetPosition = targetSection.offsetTop - headerHeight;
 
             window.scrollTo({
               top: targetPosition,
-              behavior: 'smooth'
+              behavior: "smooth",
             });
           }, 300);
         }

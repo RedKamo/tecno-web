@@ -133,14 +133,6 @@ import { Image } from "astro:assets";
       class="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-blue-50/30"
     >
       <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.2]"></div>
-      <div
-        class="absolute w-96 h-96 -top-48 -right-48 bg-sky-100 rounded-full blur-3xl opacity-30"
-      >
-      </div>
-      <div
-        class="absolute w-96 h-96 -bottom-48 -left-48 bg-blue-100 rounded-full blur-3xl opacity-30"
-      >
-      </div>
     </div>
 
     <div class="relative max-w-6xl mx-auto px-4 sm:px-8">
@@ -159,6 +151,10 @@ import { Image } from "astro:assets";
               alt="Certificación CMMI Nivel 3"
               width={300}
               height={100}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={80}
               class="w-full h-full object-contain"
             />
           </div>
@@ -197,6 +193,154 @@ import { Image } from "astro:assets";
               embajadores de una industria nacional de software pujante mundial
               con un portafolio completo y diverso.
             </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900">
+          Premios y Reconocimientos
+        </h2>
+        <div class="w-20 h-1 bg-sky-500 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div
+          class="group bg-white rounded-xl p-8 shadow-sm border border-sky-100/50 hover:shadow-lg hover:border-sky-200 transition-all duration-300"
+        >
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="w-52 h-52 rounded-xl mb-6 group-hover:scale-105 transition-transform duration-300 relative overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-rose-500 via-rose-600 to-orange-600"
+              >
+                <div
+                  class="absolute inset-0"
+                  style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0); background-size: 16px 16px;"
+                >
+                </div>
+              </div>
+              <div
+                class="relative h-full w-full flex items-center justify-center p-8 bg-white/5 backdrop-blur-[2px]"
+              >
+                <Image
+                  src="/premios2021.webp"
+                  alt="Latam Digital 2021"
+                  width={160}
+                  height={160}
+                  class="w-full h-full object-contain drop-shadow-xl"
+                />
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-sky-600 mb-3">
+              <Icon name="tabler:award-filled" class="w-5 h-5" />
+              <span class="text-sm font-medium">2021</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              PRIMER LUGAR SEGURIDAD DIGITAL
+            </h3>
+            <p class="text-gray-600">
+              Mejor campaña en procesos de tratamiento de datos.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="group bg-white rounded-xl p-8 shadow-sm border border-sky-100/50 hover:shadow-lg hover:border-sky-200 transition-all duration-300"
+        >
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="w-52 h-52 bg-gradient-to-br from-sky-50 to-white rounded-xl overflow-hidden mb-6 group-hover:scale-105 transition-transform duration-300"
+            >
+              <Image
+                src="/mejor-implementacion.webp"
+                alt="Certificado 2023 Data Security"
+                width={208}
+                height={208}
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="flex items-center gap-2 text-sky-600 mb-3">
+              <Icon name="tabler:award-filled" class="w-5 h-5" />
+              <span class="text-sm font-medium">2023</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              PRIMER LUGAR SEGURIDAD DIGITAL
+            </h3>
+            <p class="text-gray-600">Mejor implementación de DATA SECURITY.</p>
+          </div>
+        </div>
+
+        <div
+          class="group bg-white rounded-xl p-8 shadow-sm border border-sky-100/50 hover:shadow-lg hover:border-sky-200 transition-all duration-300"
+        >
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="w-52 h-52 bg-gradient-to-br from-sky-50 to-white rounded-xl overflow-hidden mb-6 group-hover:scale-105 transition-transform duration-300"
+            >
+              <Image
+                src="/mejor-estrategia.webp"
+                alt="Certificado 2023 Riesgos Digitales"
+                width={208}
+                height={208}
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="flex items-center gap-2 text-sky-600 mb-3">
+              <Icon name="tabler:award-filled" class="w-5 h-5" />
+              <span class="text-sm font-medium">2023</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              PRIMER LUGAR SEGURIDAD DIGITAL
+            </h3>
+            <p class="text-gray-600">
+              Mejor Estrategia de Mitigación de Riesgos Digitales.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8">
+      <div
+        class="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-emerald-100"
+      >
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="flex items-center gap-2 text-emerald-600 mb-4">
+              <Icon name="tabler:leaf" class="w-6 h-6" />
+              <span class="text-sm font-medium">Iniciativa Medioambiental</span>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">
+              TecnoSelva
+              <span class="block h-1 w-20 bg-emerald-500 mt-4"></span>
+            </h2>
+            <p class="text-gray-600 mb-8">
+              Descubre nuestro compromiso con el medio ambiente a través de
+              TecnoSelva, una iniciativa que busca crear conciencia y promover
+              prácticas sostenibles en el sector tecnológico.
+            </p>
+            <a
+              href="/tecno-selva"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors"
+            >
+              Conocer más sobre TecnoSelva
+              <Icon name="tabler:arrow-right" class="w-5 h-5" />
+            </a>
+          </div>
+          <div>
+            <img
+              src="/tecnoselvabg.webp"
+              alt="TecnoSelva"
+              class="rounded-xl shadow-lg"
+            />
           </div>
         </div>
       </div>

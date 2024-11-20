@@ -1,0 +1,193 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import ProductBannerTecnoSelva from "@/components/ProductBannerTecnoSelva.astro";
+import { Image } from "astro:assets";
+---
+
+<Layout title="TecnoSelva | Tecnoevolución">
+  <ProductBannerTecnoSelva
+    title="TecnoSelva"
+    icon="tabler:plant-2"
+    bgImage="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80"
+    category="Iniciativa Medioambiental"
+    features={[
+      "Conciencia Ambiental",
+      "Desarrollo Sostenible",
+      "Responsabilidad Empresarial",
+    ]}
+  />
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-8">
+    <div class="py-16">
+      <div class="px-4 sm:px-0">
+        <h1 class="text-4xl font-bold text-emerald-800 mb-6">
+          Nuestro compromiso con el medio ambiente
+        </h1>
+        <p class="text-base md:text-lg leading-relaxed text-gray-700 mb-14">
+          Tecnoevolución en busca de adquirir un compromiso real con el medio
+          ambiente ha creado TecnoSelva, esta es una publicación que trata de
+          actualidad medioambiental y da consejos de como nosotros mismos
+          podemos aportar en el cuidado del medio ambiente empezando desde
+          nuestras casas y lugares de trabajo.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 mb-20">
+        <div class="space-y-6">
+          <h2
+            class="text-3xl font-semibold text-emerald-800 mb-8 flex items-center gap-3"
+          >
+            <Icon name="tabler:target" class="w-10 h-10 text-emerald-600" />
+            Nuestros Objetivos
+          </h2>
+
+          <div
+            class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all relative overflow-hidden"
+          >
+            <div
+              class="absolute right-0 top-1/2 -translate-y-1/2 text-[120px] font-bold text-emerald-50"
+            >
+              1
+            </div>
+            <div class="flex items-start gap-4 relative">
+              <div class="bg-emerald-600 p-3 rounded-lg">
+                <Icon name="tabler:news" class="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h3 class="text-lg font-medium text-emerald-800 mb-2">
+                  Edición Periódica Ambiental
+                </h3>
+                <p class="text-gray-600">
+                  Crear una edición periódica que tenga actualidad medio
+                  ambiental y consejos prácticos para el cuidado del medio
+                  ambiente.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all relative overflow-hidden"
+          >
+            <div
+              class="absolute right-0 top-1/2 -translate-y-1/2 text-[120px] font-bold text-emerald-50"
+            >
+              2
+            </div>
+            <div class="flex items-start gap-4 relative">
+              <div class="bg-emerald-600 p-3 rounded-lg">
+                <Icon
+                  name="tabler:building-community"
+                  class="w-8 h-8 text-white"
+                />
+              </div>
+              <div>
+                <h3 class="text-lg font-medium text-emerald-800 mb-2">
+                  Compromiso Sostenible
+                </h3>
+                <p class="text-gray-600">
+                  Mostrar el compromiso que tiene Tecnoevolución Ltda. con un
+                  desarrollo sostenible.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all relative overflow-hidden"
+          >
+            <div
+              class="absolute right-0 top-1/2 -translate-y-1/2 text-[120px] font-bold text-emerald-50"
+            >
+              3
+            </div>
+            <div class="flex items-start gap-4 relative">
+              <div class="bg-emerald-600 p-3 rounded-lg">
+                <Icon name="tabler:users-group" class="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h3 class="text-lg font-medium text-emerald-800 mb-2">
+                  Conciencia Ambiental
+                </h3>
+                <p class="text-gray-600">
+                  Realizar un concurso que involucre las diferentes áreas para
+                  que tomen conciencia ambiental.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-50 rounded-xl p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <Icon
+              name="tabler:building-community"
+              class="w-8 h-8 text-emerald-600"
+            />
+            <h2 class="text-2xl font-semibold text-emerald-800">
+              Impacto en las Empresas
+            </h2>
+          </div>
+
+          <div class="space-y-8">
+            <div class="space-y-4 text-gray-600">
+              <p>
+                Aunque muchas compañías no han asumido un rol en el cuidado del
+                medio ambiente, ya sea por razones de costes, apatía o
+                desinterés por el tema, no toman en cuenta que poseen un
+                tremendo potencial para hacer una diferencia sustantiva.
+              </p>
+              <p>
+                Por otro lado, dejan pasar una oportunidad para su propio
+                negocio, pues podrían utilizar esto en beneficio de sus grupos
+                de interés, por ejemplo reduciendo sus impactos negativos y
+                desarrollando medidas de responsabilidad social empresarial.
+              </p>
+            </div>
+
+            <div class="flex justify-center">
+              <Image
+                src="/tecnoselva.webp"
+                alt="TecnoSelva Impacto Ambiental"
+                width={300}
+                height={200}
+                class="w-auto h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-emerald-900 rounded-2xl overflow-hidden">
+        <div class="p-12">
+          <div class="flex items-center gap-3 mb-6">
+            <Icon name="tabler:file-text" class="w-10 h-10 text-emerald-300" />
+            <h2 class="text-3xl font-bold text-white">
+              Publicación TecnoSelva
+            </h2>
+          </div>
+          <p class="text-xl text-emerald-100 mb-8 leading-relaxed max-w-3xl">
+            Descarga nuestra publicación completa sobre iniciativas y consejos
+            para el cuidado del medio ambiente. Aprende cómo puedes contribuir
+            desde tu hogar y lugar de trabajo.
+          </p>
+          <a
+            href="/docs/publicacion-tecno-selva.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-3 px-8 py-4 bg-white text-emerald-700 rounded-xl hover:bg-emerald-50 transition-all shadow-lg hover:shadow-xl font-medium text-lg group"
+          >
+            <Icon
+              name="tabler:download"
+              class="w-6 h-6 group-hover:scale-110 transition-transform"
+            />
+            Descargar Publicación
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style></style>

@@ -71,14 +71,21 @@ import { Icon } from "astro-icon/components";
           ></textarea>
 
           <label class="flex items-start gap-2 mb-6">
-            <input type="checkbox" name="autorizacion" required class="mt-1" />
+            <input type="checkbox" name="autorizacion" required class="mt-1.5" />
             <span class="text-sm text-gray-600">
-              Autorizo el tratamiento de mis datos personales según la
+              He leído y acepto la
               <a
-                href="/politica-privacidad"
-                class="text-sky-700 hover:underline font-medium"
-                >política de privacidad</a
+                href="/autorizacion-datos"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-sky-600 hover:text-sky-700 font-medium group"
               >
+                Autorización de Tratamiento de Datos Personales
+                <Icon 
+                  name="tabler:external-link" 
+                  class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" 
+                />
+              </a>
             </span>
           </label>
 

@@ -8,8 +8,7 @@ import ProductCTA from "../ProductCTA.astro";
 <Layout title="Comisionistas de Bolsa">
   <ProductBanner
     title="Comisionistas de Bolsa"
-    icon="/icons/logoBolsa.svg"
-    bgImage="/images/products/comisionista-bg.webp"
+    iconName="tabler:chart-candle"
     category="Solución Financiera"
     features={["Trading Avanzado", "Gestión de Inversiones", "Integración BVC"]}
   />
@@ -40,7 +39,8 @@ import ProductCTA from "../ProductCTA.astro";
                 stroke="currentColor"
                 stroke-width="1"
                 fill="none"
-                class="text-sky-200/40">
+                class="text-sky-200/40"
+              >
                 <animate
                   attributeName="d"
                   dur="4s"
@@ -49,15 +49,16 @@ import ProductCTA from "../ProductCTA.astro";
                     M0,50 L20,45 L40,60 L60,35 L80,55 L100,25;
                     M0,45 L20,55 L40,40 L60,45 L80,35 L100,45;
                     M0,50 L20,45 L40,60 L60,35 L80,55 L100,25"
-                />
+                ></animate>
               </path>
-              
+
               <path
                 d="M0,60 L20,55 L40,70 L60,45 L80,65 L100,35"
                 stroke="currentColor"
                 stroke-width="1"
                 fill="none"
-                class="text-sky-100/30">
+                class="text-sky-100/30"
+              >
                 <animate
                   attributeName="d"
                   dur="5s"
@@ -66,7 +67,7 @@ import ProductCTA from "../ProductCTA.astro";
                     M0,60 L20,55 L40,70 L60,45 L80,65 L100,35;
                     M0,55 L20,65 L40,50 L60,55 L80,45 L100,55;
                     M0,60 L20,55 L40,70 L60,45 L80,65 L100,35"
-                />
+                ></animate>
               </path>
             </svg>
           </div>
@@ -183,21 +184,3 @@ import ProductCTA from "../ProductCTA.astro";
     </div>
   </div>
 </Layout>
-
-<style>
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-</style>
