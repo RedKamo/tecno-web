@@ -58,7 +58,7 @@ export const clients: Client[] = [
   {
     logo: '/clientLogos/banco_bogota.svg',
     alt: 'Logo Banco Bogotá',
-    status: 'active'
+    status: 'historical'
   },
   {
     logo: '/clientLogos/banco_colpatria.svg',
